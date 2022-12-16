@@ -70,7 +70,7 @@ $btnColor:#EA7024;
         color:#8D8D8D;
         padding-top:.2rem; 
         padding-bottom:.2rem;
-        &:hover{
+        &:hover,&.active{
             color:$btnColor;
             background-color: transparent;
         }
