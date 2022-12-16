@@ -1,1 +1,98 @@
-<p>navbar works!</p>
+<section class="nav pt-0 pt-lg-3 pb-3 bg-white shadow-sm">
+     <div class="parent">
+        <nav class="navbar navbar-expand-lg" >
+            <div class="container-fluid flex-column flex-xl-row justify-content-xl-start">
+            <a class="navbar-brand pt-3 pt-lg-0" href="#">
+                <img src="../../assets/images/logo.png" alt="logo image" class="w-100">
+            </a>
+            <div class="d-flex justify-content-between navContainer pt-4 pt-xl-0 " #navContainer> 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="handleOpen($event)" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars fa-xs"></i>   
+                    </button>
+                    <div class="collapse navbar-collapse  navSmall" id="navbarSupportedContent" #collapse>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-lg-2 ps-xl-5" >
+                        <li class="nav-item text-end pt-4 pb-2 px-3 d-lg-none" (click)="closeMenu()">
+                            <i class="fa-solid fa-xmark fa-1x text-secondary"></i>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                               <div class="d-flex flex-column flex-lg-row">
+                                <div class="p-3 me-lg-4" *ngFor="let item of shop">
+                                    <h6>{{item.title}}</h6>
+                                    <div>
+                                         <a class="dropdown-item " *ngFor="let category of item.categories" href="#">{{category}}</a>
+                                    </div>
+                                </div>
+                                 <div class="p-3">
+                                   <img src="../../assets/images/navbar/shop.jpg" alt="shop images" class="imageWidth">
+                                </div>
+                               </div>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown product">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="d-flex flex-column flex-lg-row">
+                                     <div class="p-3 me-lg-4" *ngFor="let title of productTitles; let last = last">
+                                            <h6>{{title}}</h6>
+                                            <div class="d-flex flex-column">
+                                               <div [ngClass]="['d-flex' , !last ? 'mb-2':'']" *ngFor="let product of products">
+                                                    <img src={{product.prodImage}} alt="brownJar">
+                                                    <div class="ps-3 pt-2 mt-2">
+                                                        <h6 class="pb-1 mb-1">
+                                                            <a class="ps-0 productNav" href="#">{{product.name}}</a>
+                                                        </h6>
+                                                        <span class="text-muted text-decoration-line-through fw-light me-2 small">{{product.old}}</span>
+                                                        <span class="fw-light" >{{product.new}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                     </div>
+                                     
+                                </div>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Page
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="d-flex align-items-center" role="search">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                        <span class="material-symbols-outlined px-3">
+                        person
+                        </span>
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span>
+                    </div>
+                    </div>
+            </div>
+        </nav>
+     </div>
+</section>

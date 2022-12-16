@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200') ;
+@import '../../styles.scss';
+
+$linkColor:#222222;
+$linkBorderColor:#FAD5C1;
+$btnColor:#EA7024;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+}
+
+.navbar-toggler {
+    border:1px solid $linkColor;
+    border-radius: 0px;
+    padding:.5rem .8rem;
+    color:$linkColor;
+    &:hover{
+        color:#fff;
+        background-color: $btnColor;
+        border-color:$btnColor
+    }
+      &:focus{
+        box-shadow: none;
+    }
+}
+
+.navContainer{
+        width: 100%;
+    }
+
+.navSmall{
+    position: absolute;
+    min-height:100vh;
+    background-color: #fff;
+    top:0;
+    width: 250px;
+    left:0px;
+    .navbar-nav .nav-link{
+        font-size:14px;
+        font-weight: 600;
+        color:$linkColor;
+        line-height: 20px;
+        padding:.8rem 1rem .8rem;
+        border-bottom:1px solid #EDEEEE;
+    }
+}
+
+ .imageWidth{
+    width:230px;
+}
+
+ .dropdown-menu{
+    margin-top: 0;
+    border-radius: 0px;
+    border:none;
+    h6{
+        color:$linkColor;
+        font-weight: 600;
+        font-size: 15px;
+        padding-bottom: .8rem;
+    }
+    .dropdown-item{
+        font-size: 13px;
+        font-weight: 400;
+        color:#8D8D8D;
+        padding-top:.2rem; 
+        padding-bottom:.2rem;
+        &:hover{
+            color:$btnColor;
+            background-color: transparent;
+        }
+    }
+    .productNav{
+        text-decoration: none;
+        color:$linkColor;
+        font-size: 15px;
+        font-weight: 500;
+         &:hover{
+            color:$btnColor;
+        }
+    }
+}
+
+
+
+@media screen and (min-width:992px){
+   .navSmall{
+    position: static;
+    width:auto;
+    min-height: auto;
+    padding:0;
+    .navbar-nav .nav-link{
+            padding:8px 1rem ;
+             margin:0;
+             border-bottom:none;
+    &.active{
+        padding-bottom: 0px;
+        border-bottom: .3rem solid $linkBorderColor;
+    }
+}
+}
+ .imageWidth{
+    width:400px;
+}
+ .dropdown-menu{
+        position: fixed !important;
+        padding:1rem;
+        margin-top: 1px;
+        left:1.5rem;
+        top:8rem;
+        box-shadow: 1px 1px 5px #EDEEEE;
+        .dropdown-item{
+            padding-left: 0;
+            padding-top:.5rem; 
+            padding-bottom:.5rem;
+        }
+       
+}
+}
+
+@media screen and (min-width:1200px){
+    .navContainer{
+        flex-grow: 2;
+    }
+    .dropdown-menu{
+        left:13rem;
+        top:5rem;
+}
+
+}
+
+
