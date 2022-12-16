@@ -80,7 +80,7 @@ $btnColor:#EA7024;
         color:$linkColor;
         font-size: 15px;
         font-weight: 500;
-         &:hover{
+         &:hover,&.active{
             color:$btnColor;
         }
     }
