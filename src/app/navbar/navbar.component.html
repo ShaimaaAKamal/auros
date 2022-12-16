@@ -51,7 +51,7 @@
                                                     <img src={{product.prodImage}} alt="brownJar">
                                                     <div class="ps-3 pt-2 mt-2">
                                                         <h6 class="pb-1 mb-1">
-                                                            <a class="ps-0 productNav" href="#">{{product.name}}</a>
+                                                            <a class="ps-0 productNav" [routerLink]="'/shop/product/'+product.id">{{product.name}}</a>
                                                         </h6>
                                                         <span class="text-muted text-decoration-line-through fw-light me-2 small">{{product.old}}</span>
                                                         <span class="fw-light" >{{product.new}}</span>

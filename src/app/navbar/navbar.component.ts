@@ -25,9 +25,9 @@ shop:ShopInterface[]=[{title:'Kitchen',categories:['Dinner Table','Dinning Chair
             {title:'Decoration',categories:['Lamps','Lighting','Furnitures','Speakers','Stools']}
            ]
 productTitles:string[]=['Product Name','Product Feature','Product Special']
-products:Product[]=[{prodImage:'../../assets/images/ProductName/hummingbird-printed-t-shirt.jpg',name:'Teatop',old:"$43.90",new:'$21.90'},
-               {prodImage:'../../assets/images/ProductName/brown-bear-printed-sweater.jpg',name:'Miro Dinning Table',old:"$83.90",new:'$52.90'},
-                    {prodImage:'../../assets/images/ProductName/the-best-is-yet-to-come-framed-poster.jpg',name:'Janus Table Lamp',old:"$73.90",new:'$41.90'}]
+products:Product[]=[{id:1,prodImage:'../../assets/images/ProductName/hummingbird-printed-t-shirt.jpg',name:'Teatop',old:"$43.90",new:'$21.90'},
+                    {id:2,prodImage:'../../assets/images/ProductName/brown-bear-printed-sweater.jpg',name:'Miro Dinning Table',old:"$83.90",new:'$52.90'},
+                    {id:3,prodImage:'../../assets/images/ProductName/the-best-is-yet-to-come-framed-poster.jpg',name:'Janus Table Lamp',old:"$73.90",new:'$41.90'}]
 user:User={name:'ahmed'}
              
  closeMenu(){
