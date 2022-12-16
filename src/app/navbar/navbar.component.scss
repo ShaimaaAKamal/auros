@@ -98,7 +98,20 @@ $btnColor:#EA7024;
             padding-bottom:.5rem;
         }
 }
-#search .btn{
+
+#user .dropdown-menu{
+        position: fixed !important;
+        right:3.5rem;
+        left:unset;
+        top: 7.5rem !important;
+        box-shadow: 1px 1px 5px #EDEEEE;
+         .dropdown-item{
+            padding-top:.2rem; 
+            padding-bottom:.2rem;
+        }
+
+}
+#search .btn,#user .btn{
     padding: 0 !important;
     border:none;
 }
@@ -149,7 +162,7 @@ $btnColor:#EA7024;
        
 }
 
-#search .dropdown-menu{
+#search .dropdown-menu,#user .dropdown-menu{
         top: 8rem !important;
 }
 }
@@ -163,7 +176,7 @@ $btnColor:#EA7024;
         left:13rem;
         top:5rem;
 }
-#search .dropdown-menu{
+#search .dropdown-menu , #user .dropdown-menu{
         top: 4.5rem !important;
 }
 }
