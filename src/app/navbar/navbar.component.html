@@ -17,8 +17,8 @@
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" routerLink="">Home</a>
                         </li>
-                        <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" routerLink="/shop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Shop
                         </a>
                         <ul class="dropdown-menu">
@@ -38,7 +38,7 @@
                         </ul>
                         </li>
                         <li class="nav-item dropdown product">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" routerLink="/shop/product/1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Product
                         </a>
                         <ul class="dropdown-menu">
@@ -102,15 +102,15 @@
                                  </span>
                         </button>
                          <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" routerLink="/auth/login">
+                                <li *ngIf="!loggedUser"><a class="dropdown-item" routerLink="/auth/login">
                                     <i class="fa-solid fa-arrow-right-to-bracket me-2"></i>
                                     <span>Sign In</span>
                                     </a></li>
-                                <li><a class="dropdown-item" routerLink="/auth">
+                                <li *ngIf="loggedUser"><a class="dropdown-item" routerLink="/auth">
                                    <i class="fa-regular fa-user me-2"></i>
-                                   <span>Hello user</span>
+                                   <span>Hello {{user.name}}</span>
                                     </a></li>
-                                <li><a class="dropdown-item" routerLink="/auth/login">
+                                <li *ngIf="loggedUser"><a class="dropdown-item" routerLink="/auth/login">
                                     <i class="fa-solid fa-arrow-right-from-bracket me-2"></i>
                                     <span>Sign Out</span>
                                     </a></li>
@@ -125,18 +125,21 @@
                                 <li><a class="dropdown-item" routerLink="/shop/wishlist">
                                     <i class="fa-regular fa-heart me-2"></i>
                                     <span class="me-1">Wishlist</span>
-                                    <span>0</span>
+                                    <span>{{wishlistNumber}}</span>
                                    </a></li>
                                 <li><a class="dropdown-item" routerLink="/shop/compare">
                                     <i class="fa-solid fa-minimize me-2"></i>
                                     <span class="me-1">Compare</span>
-                                    <span>0</span>
+                                    <span>{{compareNumber}}</span>
                                     </a></li>
                          </ul>
                         </div>
-                    <span class="material-symbols-outlined pt-1">
-                        shopping_cart
-                    </span>
+                    <div class="position-relative pt-2">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                       </span>
+                       <span class="badge text-bg-site rounded-circle cartItems">{{cartItems}}</span>
+                    </div>
                     </div>
                     </div>
             </div>
