@@ -32,10 +32,16 @@ products:Product[]=[{prodImage:'../../assets/images/ProductName/hummingbird-prin
                {prodImage:'../../assets/images/ProductName/brown-bear-printed-sweater.jpg',name:'Miro Dinning Table',old:"$83.90",new:'$52.90'},
                     {prodImage:'../../assets/images/ProductName/the-best-is-yet-to-come-framed-poster.jpg',name:'Janus Table Lamp',old:"$73.90",new:'$41.90'}]
 
+closeSearch:boolean=false;
              
  closeMenu(){
   this.collapse.nativeElement.classList.remove('show');
 }
+
+handleOpenSearch(){
+  this.closeSearch=!this.closeSearch;
+}
+
 handleOpen(event:Event){
 }
 ngOnInit(): void {

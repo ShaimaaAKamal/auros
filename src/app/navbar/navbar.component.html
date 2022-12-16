@@ -73,9 +73,28 @@
                     </ul>
                     </div>
                     <div class="d-flex align-items-center" role="search">
-                        <span class="material-symbols-outlined">
-                            search
-                        </span>
+                        <div class="dropdown" id="search">
+                        <button class="btn btn-transparent " type="button" (click)="handleOpenSearch()" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="material-symbols-outlined" *ngIf="!closeSearch">
+                                    search
+                                </span>
+                                <span class="material-symbols-outlined" *ngIf="closeSearch">
+                                    close
+                                </span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="input-group">
+                                    <input type="text" id="searchInput" class="form-control rounded-0 border-0" placeholder="Search" aria-label="search bar" aria-describedby="searchfield">
+                                    <span class="input-group-text bg-dark rounded-0 border-0" id="searchfield">
+                                         <span class="material-symbols-outlined text-white">
+                                            search
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
                         <span class="material-symbols-outlined px-3">
                         person
                         </span>
