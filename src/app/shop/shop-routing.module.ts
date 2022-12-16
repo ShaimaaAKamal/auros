@@ -8,6 +8,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {path:'',component:ShopComponent,title:'Shop'},
+  {path:'product' ,redirectTo:'product/1'},
   {path:'product/:id',component:ProductComponent,title:'Product'},
   {path:'compare',component:CompareComponent,title:'Compare Products'},
   {path:'checkout',component:CheckoutComponent,title:'Checkout'},
