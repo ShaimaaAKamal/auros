@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent,title:'Contact'},
   {path:'blog',component:BlogComponent,title:'Blog'},
   {path:'auth',loadChildren:()=>import('./auth/auth.module').then((ms)=>ms.AuthModule)},
+  {path:'shop',loadChildren:()=>import('./shop/shop.module').then((ms=>ms.ShopModule))},
   {path:'**' ,component:NotfoundComponent}
 ];
 
