@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap');
+
+html{
+    font-family: 'Poppins', sans-serif ;
+}
+body{
+    padding: 0;
+    margin: 0;
+   font-family: inherit;
+}
+.parent{
+    width:98%;
+}
+
+@media screen and (min-width:992px){
+    .parent{
+    margin: 0 auto;
+}
+}
