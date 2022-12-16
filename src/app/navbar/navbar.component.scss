@@ -26,7 +26,9 @@ $btnColor:#EA7024;
         box-shadow: none;
     }
 }
-
+.text-bg-site{
+    background-color: $btnColor;
+}
 .navContainer{
         width: 100%;
     }
@@ -106,8 +108,10 @@ $btnColor:#EA7024;
         top: 7.5rem !important;
         box-shadow: 1px 1px 5px #EDEEEE;
          .dropdown-item{
-            padding-top:.2rem; 
-            padding-bottom:.2rem;
+            font-weight: 300px;
+            font-size: 12px;
+            padding-top:.4rem; 
+            padding-bottom:.4rem;
         }
 
 }
@@ -125,7 +129,13 @@ $btnColor:#EA7024;
     }
 }
 
-
+.cartItems{
+    position: absolute;
+    font-size: .5rem;
+    top:.2rem;
+    right:0;
+    
+}
 
 
 @media screen and (min-width:992px){
