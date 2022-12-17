@@ -10,7 +10,7 @@ import { ShopInterface } from '../Interfaces/shop-interface';
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent implements OnInit{
+export class NavbarComponent{
 @ViewChild('collapse') collapse:ElementRef;
 @ViewChild('searchMenu') searchMenu:ElementRef;
 @ViewChild('userMenu') userMenu:ElementRef;
@@ -41,13 +41,7 @@ handleOpenSearch(){
 }
 
 handleOpenUser(){
-    console.log(this.userMenu.nativeElement);
+  this.userMenu.nativeElement.classList.toggle('show');
 }
 
-handleOpen(event:Event){
-}
-ngOnInit(): void {
-}
- ngAfterViewInit() {
-  }
 }
