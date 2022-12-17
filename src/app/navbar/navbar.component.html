@@ -27,7 +27,7 @@
                                 <div class="p-3 me-lg-4" *ngFor="let item of shop">
                                     <h6>{{item.title}}</h6>
                                     <div>
-                                         <a class="dropdown-item " *ngFor="let category of item.categories" href="#">{{category}}</a>
+                                         <a class="dropdown-item " *ngFor="let category of item.categories" routerLinkActive="active" [routerLink]="'/shop/categories/'+ category.id + '/' + category.name.split(' ').join('_')">{{category.name}}</a>
                                     </div>
                                 </div>
                                  <div class="p-3">

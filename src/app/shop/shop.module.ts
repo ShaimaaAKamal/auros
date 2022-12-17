@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { CompareComponent } from './compare/compare.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProductsComponent } from './products/products.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     ProductComponent,
     CompareComponent,
     CheckoutComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,

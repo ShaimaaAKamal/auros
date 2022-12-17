@@ -20,9 +20,9 @@ wishlistNumber:number=0;
 compareNumber:number=0;
 loggedUser:boolean=true;
 
-shop:ShopInterface[]=[{title:'Kitchen',categories:['Dinner Table','Dinning Chairs','Side Board','Cermaic Tiles','Seat']},
-            {title:'Living Room',categories:['Sofa','TV Shelfs','Coffee Tables','Bed Sheet','Cusions']},
-            {title:'Decoration',categories:['Lamps','Lighting','Furnitures','Speakers','Stools']}
+shop:ShopInterface[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1},{name:'Dinning Chairs',id:2},{name:'Side Board',id:3},{name:'Cermaic Tiles',id:4},{name:'Seat',id:5}]},
+            {title:'Living Room',categories:[{name:'Sofa',id:6},{name:'TV Shelfs',id:7},{name:'Coffee Tables',id:8},{name:'Bed Sheet',id:9},{name:'Cusions',id:10}]},
+            {title:'Decoration',categories:[{name:'Lamps',id:11},{name:'Lighting',id:12},{name:'Furnitures',id:13},{name:'Speakers',id:14},{name:'Stools',id:15}]}
            ]
 productTitles:string[]=['Product Name','Product Feature','Product Special']
 products:Product[]=[{id:1,prodImage:'../../assets/images/ProductName/hummingbird-printed-t-shirt.jpg',name:'Teatop',old:"$43.90",new:'$21.90'},
