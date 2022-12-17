@@ -14,7 +14,9 @@ $btnColor:#EA7024;
   'GRAD' 0,
   'opsz' 48;
 }
-
+.textSite{
+    color:$btnColor;
+}
 .navbar-toggler {
     border:1px solid $linkColor;
     border-radius: 0px;
@@ -146,6 +148,9 @@ $btnColor:#EA7024;
     .dropdown-menu{
         display: block;
     }
+}
+.userIcon:hover{
+    color:$btnColor;
 }
 
 @media screen and (min-width:992px){

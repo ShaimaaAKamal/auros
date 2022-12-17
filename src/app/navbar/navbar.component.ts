@@ -14,6 +14,7 @@ export class NavbarComponent{
 @ViewChild('collapse') collapse:ElementRef;
 @ViewChild('searchMenu') searchMenu:ElementRef;
 @ViewChild('userMenu') userMenu:ElementRef;
+@ViewChild('userLink') userLink:ElementRef;
 
 closeSearch:boolean=false;
 cartItems:number=0;
@@ -42,6 +43,7 @@ handleOpenSearch(){
 
 handleOpenUser(){
   this.userMenu.nativeElement.classList.toggle('show');
+  this.userLink.nativeElement.classList.toggle('textSite');
 }
 
 }
