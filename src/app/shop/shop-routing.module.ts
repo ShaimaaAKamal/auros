@@ -11,6 +11,8 @@ const routes: Routes = [
   {path:'',component:ShopComponent,title:'Shop'},
   {path:'product' ,redirectTo:'product/1'},
   {path:'product/:id',component:ProductComponent,title:'Product'},
+  {path:'bestSeller',component:ProductsComponent,title:'Best Seller'},
+  {path:'newProducts',component:ProductsComponent,title:'New In'},
   {path:'categories', redirectTo:''},
   {path:'categories/:id/:category',component:ProductsComponent,title:'Category'},
   {path:'compare',component:CompareComponent,title:'Compare Products'},
