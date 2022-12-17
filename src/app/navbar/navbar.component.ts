@@ -12,7 +12,8 @@ import { ShopInterface } from '../Interfaces/shop-interface';
 
 export class NavbarComponent implements OnInit{
 @ViewChild('collapse') collapse:ElementRef;
-
+@ViewChild('searchMenu') searchMenu:ElementRef;
+@ViewChild('userMenu') userMenu:ElementRef;
 
 closeSearch:boolean=false;
 cartItems:number=0;
@@ -36,6 +37,11 @@ user:User={name:'ahmed'}
 
 handleOpenSearch(){
   this.closeSearch=!this.closeSearch;
+  this.searchMenu.nativeElement.classList.toggle('show');
+}
+
+handleOpenUser(){
+    console.log(this.userMenu.nativeElement);
 }
 
 handleOpen(event:Event){
