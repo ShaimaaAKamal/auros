@@ -12,12 +12,14 @@ body{
    font-family: inherit;
 }
 .parent{
-    width:98%;
+    width:97%;
+    margin: 0 auto;
 }
 .fs-sm{
     font-size: 13px;
     line-height: 24px;
 }
+
 .textDark{
     color:$linkColor;
 }
@@ -25,7 +27,18 @@ body{
 .dropdown-toggle::after {
             display: none !important;
         }
-
+.secondaryBtn{
+    background-color: transparent;
+    padding:.8rem 2.5rem;
+    border:2px solid $linkColor;
+    font-weight: 400;
+    color:$linkColor;
+    &:hover{
+        background-color: $btnColor;
+        border-color: $btnColor;
+        color:#fff;
+    }
+}
 @media screen and (min-width:992px){
     .parent{
     margin: 0 auto;
