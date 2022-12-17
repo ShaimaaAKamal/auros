@@ -1,0 +1,95 @@
+@import '../../../styles.scss';
+
+.borderLeft{
+   border-left:1px solid $linkColor;
+}
+.lh-title{
+    line-height: 22px;
+}
+.animation{
+    opacity: 0;
+    transition: opacity 1s;
+    animation-name: Display;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+.headingInfo{
+    transform: scale(.4) translateX(-40%);
+    left:0px;
+    top:0;
+    h1{
+      @extend .animation;
+      animation-delay:.4;
+    }
+    p{
+        @extend .animation;
+        animation-delay: .7s;
+    }
+    a{
+        @extend .animation;
+        animation-delay: 1s;
+    }
+}
+
+@keyframes Display {
+    0% {opacity:.2}
+    25%{opacity:.4}
+    50%{opacity:.6}
+    75%{opacity: .8}
+    100%{opacity: 1;}
+    
+}
+.arrow{
+    bottom:0;
+    top:unset;
+    width:auto;
+    &:hover i{
+        color: $btnColor !important;
+    }
+}
+.carousel-control-next{
+    @extend .arrow;
+    right: 0;
+   
+}
+.carousel-control-prev{
+    @extend .arrow;
+    border-right:1px solid #eee;
+    right: 60px;
+    left:unset;
+}
+@media screen and (min-width:576px) {
+  .headingInfo{
+    transform: scale(.6) translateX(-35%);
+    left:15%;
+}  
+}
+
+@media screen and (min-width:768px) {
+  .headingInfo{
+    transform: scale(.8) translateX(-15%);
+}  
+}
+
+@media screen and (min-width:992px) {
+  .headingInfo{
+    transform: scale(.9) translateX(-5%);
+}  
+}
+@media screen and (min-width:1200px) {
+  .headingInfo{
+    transform: unset;
+}  
+}
+
+// .homeHeading{
+//     height: 95vh;
+//     background-image: url('../../../assets/images/HomeHeading/h1-slide1.jpg');
+//     background-repeat:no-repeat;
+//     background-size: cover;
+//     background-position: center center;
+// }
+// .headingInfo{
+//     position: relative;
+//     left:15%;
+// }
