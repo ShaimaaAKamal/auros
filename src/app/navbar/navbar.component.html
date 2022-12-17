@@ -6,7 +6,7 @@
                 <img src="../../assets/images/logo.png" alt="logo image" class="w-100">
             </a>
             <div class="d-flex justify-content-between navContainer pt-4 pt-xl-0 " #navContainer> 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="handleOpen($event)" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa-solid fa-bars fa-xs"></i>   
                     </button>
                     <div class="collapse navbar-collapse  navSmall" id="navbarSupportedContent" #collapse>
@@ -18,8 +18,9 @@
                         <a class="nav-link" aria-current="page"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/shop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Shop
+                        <a class="nav-link dropdown-toggle"  [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/shop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span>Shop</span>
+                            <i class="fa-solid fa-angle-down ms-2 fa-sm"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
@@ -39,7 +40,8 @@
                         </li>
                         <li class="nav-item dropdown product">
                         <a class="nav-link dropdown-toggle" routerLinkActive="active" routerLink="/shop/product" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Product
+                            <span>Product</span>
+                            <i class="fa-solid fa-angle-down ms-2 fa-sm"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
