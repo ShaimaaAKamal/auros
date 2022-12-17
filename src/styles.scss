@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap');
 
+$linkColor:#222222;
+$linkBorderColor:#FAD5C1;
+$btnColor:#EA7024;
 html{
     font-family: 'Poppins', sans-serif ;
 }
@@ -11,6 +14,17 @@ body{
 .parent{
     width:98%;
 }
+.fs-sm{
+    font-size: 13px;
+    line-height: 24px;
+}
+.textDark{
+    color:$linkColor;
+}
+
+.dropdown-toggle::after {
+            display: none !important;
+        }
 
 @media screen and (min-width:992px){
     .parent{
