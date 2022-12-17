@@ -136,7 +136,11 @@ $btnColor:#EA7024;
     right:0;
     
 }
-
+.nav-item:hover,#user:hover{
+    .dropdown-menu{
+        display: block;
+    }
+}
 
 @media screen and (min-width:992px){
    .navSmall{
