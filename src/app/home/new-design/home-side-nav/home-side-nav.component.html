@@ -1,36 +1,36 @@
-<ul class="nav nav-pills justify-content-md-end justify-content-center mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills justify-content-lg-end justify-content-center mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#all"  role="tab" aria-controls="pills-all" aria-selected="true">All</a>
+    <button type="button" class="nav-link active" id="pills-all-tab" (click)="getData('all')"   data-bs-toggle="pill" data-bs-target="#all"  role="tab" aria-controls="pills-all" aria-selected="true">All</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-Furnitures-tab" data-bs-toggle="pill" data-bs-target="#pills-Furnitures" role="tab" aria-controls="pills-Furnitures" aria-selected="false">Furnitures</button>
+    <button type="button" class="nav-link" id="pills-Furnitures-tab" (click)="getData('Furnitures')"  data-bs-toggle="pill" data-bs-target="#pills-Furnitures" role="tab" aria-controls="pills-Furnitures" aria-selected="false">Furnitures</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-Chairs-tab" data-bs-toggle="pill" data-bs-target="#pills-Chairs"  role="tab" aria-controls="pills-Chairs" aria-selected="false">Chairs</button>
+    <button type="button" class="nav-link" id="pills-Chairs-tab" (click)="getData('Chairs')"  data-bs-toggle="pill" data-bs-target="#pills-Chairs"  role="tab" aria-controls="pills-Chairs" aria-selected="false">Chairs</button>
   </li>
    <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-Lighting-tab" data-bs-toggle="pill" data-bs-target="#pills-Lighting"  role="tab" aria-controls="pills-Lighting" aria-selected="false">Lighting</button>
+    <button  type="button" class="nav-link" id="pills-Lighting-tab" (click)="getData('Lighting')"  data-bs-toggle="pill" data-bs-target="#pills-Lighting"  role="tab" aria-controls="pills-Lighting" aria-selected="false">Lighting</button>
   </li>
    <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-Decor-tab" data-bs-toggle="pill" data-bs-target="#pills-Decor"  role="tab" aria-controls="pills-Decor" aria-selected="false">Decor</button>
+    <button type="button" class="nav-link" id="pills-Decor-tab" (click)="getData('Decor')"  data-bs-toggle="pill" data-bs-target="#pills-Decor"  role="tab" aria-controls="pills-Decor" aria-selected="false">Decor</button>
   </li>
   
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
-    <app-sidenav-items [category]="'all'"></app-sidenav-items>
+    <app-sidenav-items *ngIf="categories[0]" [Data]="Data"></app-sidenav-items>
   </div>
   <div class="tab-pane fade" id="pills-Furnitures" role="tabpanel" aria-labelledby="pills-Furnitures-tab" tabindex="0">
-        <app-sidenav-items [category]="'Furnitures'"></app-sidenav-items>
+            <app-sidenav-items *ngIf="categories[1]"  [Data]="Data"></app-sidenav-items>
     </div>
   <div class="tab-pane fade" id="pills-Chairs" role="tabpanel" aria-labelledby="pills-Chairs-tab" tabindex="0">
-            <app-sidenav-items [category]="'Chairs'"></app-sidenav-items>
+            <app-sidenav-items *ngIf="categories[2]"  [Data]="Data"></app-sidenav-items>
   </div>
   <div class="tab-pane fade" id="pills-Lighting" role="tabpanel" aria-labelledby="pills-Lighting-tab" tabindex="0">
-                <app-sidenav-items [category]="'Lighting'"></app-sidenav-items>
+                <app-sidenav-items *ngIf="categories[3]"  [Data]="Data"></app-sidenav-items>
   </div>
   <div class="tab-pane fade" id="pills-Decor" role="tabpanel" aria-labelledby="pills-Decor-tab" tabindex="0">
-                    <app-sidenav-items [category]="'Decor'"></app-sidenav-items>
+                    <app-sidenav-items *ngIf="categories[4]"  [Data]="Data"></app-sidenav-items>
   </div>
 
 </div>

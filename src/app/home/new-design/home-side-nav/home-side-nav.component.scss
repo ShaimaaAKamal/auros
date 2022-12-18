@@ -14,7 +14,9 @@
         }
         &.active{
             border-bottom:4px solid $linkBorderColor;
-            color:$linkColor;
-            
+            color:$linkColor; 
+        }
+        &:focus{
+          outline: unset;    
         }
     }}
