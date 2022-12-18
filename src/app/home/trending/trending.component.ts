@@ -15,13 +15,16 @@ export class TrendingComponent {
        alt:'Side 1',
        title:'Teapot',
        productId:1,
-       old:"$43.90",new:'$21.90'
+       discount:10,
+       new:'$21.90',
+       old:"$43.90",
      },
      {
        id: 2,
        src:"../../../assets/images/trending/table/brown-bear-printed-sweater2.jpg",
        srcHover:"../../../assets/images/trending/table/brown-bear-printed-sweater3.jpg",
        alt:'Side 2',
+       discount:20,
        title:'Miro Dinning Table',
       productId:2,old:"$83.90",new:'$52.90',
      },
@@ -31,6 +34,7 @@ export class TrendingComponent {
        srcHover:"../../../assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
        alt:'Side 3',
        title:'Janus Table Lamp',
+       discount:10,
        productId:3,
        old:"$73.90",new:'$41.90'
      },
@@ -41,6 +45,7 @@ export class TrendingComponent {
        alt:'Side 4',
        title:'Discus Floor and Table',
        productId:4,
+       discount:10,
         old:"$199.90",new:'$150.90'
      },
    ]
