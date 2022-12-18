@@ -18,9 +18,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewDesignComponent } from './home/new-design/new-design.component';
 import { CategoryItemsCardComponent } from './home/category-items-card/category-items-card.component';
-import { HomeSideNavComponent } from './home/new-design/home-side-nav/home-side-nav.component';
 import { SidenavItemsComponent } from './home/new-design/home-side-nav/sidenav-items/sidenav-items.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { HomeSideNavComponent } from './home/new-Design/home-side-nav/home-side-nav.component';
 
 @NgModule({
   declarations: [
