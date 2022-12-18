@@ -11,6 +11,10 @@
   'opsz' 48;
 }
 
+.nav{
+    position: relative;
+    z-index:9999;
+}
 .textSite{
     color:$btnColor;
 }
