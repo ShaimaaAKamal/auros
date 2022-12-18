@@ -1,5 +1,4 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { fakeAsync } from '@angular/core/testing';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-home-trending',
@@ -70,13 +69,4 @@ export class TrendingComponent {
       }
     },
   }
-  addToCart(){
-  }
-  addToWishlist(event:any,id:number){
-    event.target.classList.toggle('iconColor');
-  }
-  addToCompare(event:any,id:number){
-        event.target.classList.toggle('iconColor');
-  }
-
 }
