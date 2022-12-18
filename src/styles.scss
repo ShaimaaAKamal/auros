@@ -3,6 +3,7 @@
 $linkColor:#222222;
 $linkBorderColor:#FAD5C1;
 $btnColor:#EA7024;
+$textGray:#999999;
 html{
     font-family: 'Poppins', sans-serif ;
 }
@@ -20,10 +21,21 @@ body{
     line-height: 24px;
 }
 
+.fs-xs{
+    font-size: 11px;
+}
+.more{
+    border-bottom:3px solid $linkBorderColor;
+}
 .textDark{
     color:$linkColor;
 }
-
+.textGray{
+    color:$textGray;
+}
+.textSite{
+   color:$btnColor;
+}
 .dropdown-toggle::after {
             display: none !important;
         }
