@@ -1,0 +1,29 @@
+@import '../../../styles.scss';
+
+.trendHead{
+    z-index:2;
+}
+.carsouelCard:hover{
+    .carsouelInfo{
+        display: block !important;
+    }
+}
+
+.iconColor{
+    color:$btnColor !important
+}
+.hoverInfo{
+    i{
+        border-radius: 50%;
+        padding:.7rem .8rem;
+        background-color: #fff;;
+        margin:0 .3rem;
+        color:$linkColor;
+        transition: transform .5s;
+        &:hover{
+            color:#fff;
+            background-color: #aaa;
+            transform: translateY(-5px);
+        }
+    }
+}
