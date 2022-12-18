@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'product' ,redirectTo:'product/1'},
   {path:'product/:id',component:ProductComponent,title:'Product'},
   {path:'bestSeller',component:ProductsComponent,title:'Best Seller'},
+   {path:'trending',component:ProductsComponent,title:'Trending'},
   {path:'newProducts',component:ProductsComponent,title:'New In'},
   {path:'categories', redirectTo:''},
   {path:'categories/:id/:category',component:ProductsComponent,title:'Category'},
