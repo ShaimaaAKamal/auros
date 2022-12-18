@@ -1,0 +1,20 @@
+@import '../../../../styles.scss';
+
+.nav-pills{
+    .nav-link{
+        @extend .fs-sm;
+        color:#999;
+        border-radius: 0px;
+        padding:8px 4px 1px;
+        margin:0 12px;
+        font-weight:500 !important;
+        background-color: transparent !important;
+        &:hover{
+            border-bottom:4px solid $linkBorderColor;
+        }
+        &.active{
+            border-bottom:4px solid $linkBorderColor;
+            color:$linkColor;
+            
+        }
+    }}
