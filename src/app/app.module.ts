@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { FaqComponent } from './faq/faq.component';
 import { FormsModule } from '@angular/forms';
 import { HomeHeadingComponent } from './home/home-heading/home-heading.component';
+import { CategoriesComponent } from './home/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeHeadingComponent } from './home/home-heading/home-heading.component
     NotfoundComponent,
     AboutComponent,
     FaqComponent,
-    HomeHeadingComponent
+    HomeHeadingComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

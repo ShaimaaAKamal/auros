@@ -1,0 +1,15 @@
+@import '../.././../styles.scss';
+
+ .homeCategoryImage,a{
+        transition: all 1s;
+    }
+
+.homeCategory:hover{
+    .homeCategoryImage{
+        transition: all 1s;
+        transform: scale(1.1);
+    }
+    a{
+        color:$btnColor;
+    }
+}
