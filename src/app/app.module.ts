@@ -17,6 +17,7 @@ import { TrendingComponent } from './home/trending/trending.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewDesignComponent } from './home/new-design/new-design.component';
+import { CategoryItemsCardComponent } from './home/category-items-card/category-items-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewDesignComponent } from './home/new-design/new-design.component';
     HomeHeadingComponent,
     CategoriesComponent,
     TrendingComponent,
-    NewDesignComponent
+    NewDesignComponent,
+    CategoryItemsCardComponent
   ],
   imports: [
     BrowserModule,

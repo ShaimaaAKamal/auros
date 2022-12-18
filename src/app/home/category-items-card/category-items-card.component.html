@@ -1,0 +1,12 @@
+ <div class="homeCategory position-relative overflow-hidden bg-">
+                <div>
+                    <img [src]="category.image" [alt]="category.name + 'element'" class="w-100 homeCategoryImage">
+                </div>
+                <!-- <div class="position-absolute w-100 h-100 top-0 start-0 p-4 ps-sm-5 p-md-4 p-xl-5 "> -->
+                <div [ngClass]="absClasses">
+                    <h5 class="fw-semibold h2">
+                        <a class='text-decoration-none textDark' [routerLink]="'/shop/categories/'+ category.id + '/'+category.name.split('_').join(' ')">{{category.name}}</a>
+                    </h5>
+                    <p class="text-muted fs-sm">{{category.items}} {{category.items > 1 ?'items':'item'}}</p>
+                </div>
+</div>
