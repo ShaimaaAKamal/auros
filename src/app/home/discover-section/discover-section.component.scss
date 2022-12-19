@@ -1,0 +1,18 @@
+.discover{
+    height:600px;
+    .bgImage{
+        object-fit: cover;
+    }
+    .borderLeft{
+        border-left:1px solid #fff !important
+    }
+    h6{
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .discoverInfo{
+        left:30%;
+    }
+}
