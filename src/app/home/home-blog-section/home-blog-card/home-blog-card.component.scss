@@ -1,0 +1,33 @@
+@import '../../../../styles.scss';
+.info{
+    position: relative;
+    &::after{
+        content:'';
+        background-color: #EEEEEE;
+        height: 1px;
+        width:25%;
+        position: absolute;
+        left:0;
+        bottom:-10px;
+    }
+}
+
+.title:hover{
+    color:$btnColor;
+}
+.blogImage{
+    transition: transform 1s;
+}
+.blogCard:hover .blogImage {
+        transform:scale(1.2) rotate(4deg);
+}
+
+.card .more{
+    transition: padding 1s;
+    &:hover{
+        border:none;
+        background-color: $btnColor;
+        color:#fff !important;
+        padding:.8rem 1.5rem;
+    }
+}

@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'' , component:HomeComponent,title:'Home'},
   {path:'contact',component:ContactComponent,title:'Contact'},
   {path:'blog',component:BlogComponent,title:'Blog'},
+  {path:'blog/:id',component:BlogComponent,title:'Blog'},
   {path:'FAQS',component:FaqComponent,title:'FAQS'},
   {path:'about',component:AboutComponent,title:'About'},
   {path:'auth',loadChildren:()=>import('./auth/auth.module').then((ms)=>ms.AuthModule)},

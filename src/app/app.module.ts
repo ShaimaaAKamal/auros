@@ -22,6 +22,8 @@ import { SidenavItemsComponent } from './home/new-design/home-side-nav/sidenav-i
 import { ProductCardComponent } from './product-card/product-card.component';
 import { HomeSideNavComponent } from './home/new-Design/home-side-nav/home-side-nav.component';
 import { DiscoverSectionComponent } from './home/discover-section/discover-section.component';
+import { HomeBlogSectionComponent } from './home/home-blog-section/home-blog-section.component';
+import { HomeBlogCardComponent } from './home/home-blog-section/home-blog-card/home-blog-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { DiscoverSectionComponent } from './home/discover-section/discover-secti
     HomeSideNavComponent,
     SidenavItemsComponent,
     ProductCardComponent,
-    DiscoverSectionComponent
+    DiscoverSectionComponent,
+    HomeBlogSectionComponent,
+    HomeBlogCardComponent
   ],
   imports: [
     BrowserModule,

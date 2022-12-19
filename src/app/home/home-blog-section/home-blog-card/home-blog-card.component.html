@@ -1,0 +1,18 @@
+<div class="card rounded-0 border-0 ">
+    <div class="blogCard overflow-hidden">
+          <img [src]= "blog.image" class="card-img-top blogImage rounded-0" alt="blog Image">
+    </div>
+  <div class="card-body pt-4 rounded-0 border-0">
+    <p class="card-text h5 title">
+        <a [routerLink]="'/blog/'+blog.id" class="text-decoration-none text-reset">
+        {{blog.title.split('').slice(0,28).join('')}}<span *ngIf="blog.title.length >28">...</span>
+    </a></p>
+    <div class="fs-sm text-dark info"><span>{{blog.category}} / </span><span class="textGray">{{blog.date}}</span></div>
+    <p class="textGray fs-sm py-4">
+        {{blog.description.split('').slice(0,180).join('')}}<span *ngIf="blog.description.length >180">...</span>
+    </p>
+     <div>
+       <a [routerLink]="'/blog/'+blog.id" class="more text-decoration-none text-dark fw-normal small">+ See More</a>
+    </div>
+  </div>
+</div>
