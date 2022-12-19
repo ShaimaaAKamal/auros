@@ -9,10 +9,17 @@
     h6{
         width: fit-content;
     }
+     .discoverInfo{
+        right:50%;
+        transform: translateX(50%);
+    }
 }
 
 @media screen and (min-width:992px) {
-    .discoverInfo{
-        left:30%;
+    .discover{
+        .discoverInfo{
+        right:10%;
+        transform: translateX(0%);
+    }
     }
 }

@@ -36,9 +36,11 @@ body{
 .textSite{
    color:$btnColor;
 }
+
 .dropdown-toggle::after {
             display: none !important;
         }
+
 .secondaryBtn{
     background-color: transparent;
     padding:.8rem 2.5rem;
