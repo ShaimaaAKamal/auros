@@ -51,6 +51,20 @@ body{
         color:#fff;
     }
 }
+
+.mainBtn{
+    background-color: transparent;
+    padding:.8rem 2.5rem;
+    border:2px solid #fff;
+    font-weight: 400;
+    color:#fff;
+    &:hover{
+        background-color: $linkColor;
+        border-color: $linkColor;
+       color:#fff;
+    }
+}
+
 @media screen and (min-width:992px){
     .parent{
     margin: 0 auto;
