@@ -1,5 +1,5 @@
 <section class="sideNavItems pt-4">
-      <div class="py-3 mt-lg-1">
+      <div class="pt-3 mt-lg-1">
         <owl-carousel-o *ngIf="Data.length >2" [options]="customOptions">
             <ng-container  *ngFor="let slide of Data; let even=even ; let index=index ; let last=last;">
                     <ng-template  *ngIf="even" carouselSlide [id]="(slide.id).toString()">
