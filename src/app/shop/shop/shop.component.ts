@@ -16,7 +16,8 @@ export class ShopComponent {
        alt:'Side 1',
        title:'Teapot',
        productId:1,
-       old:"$43.90",new:'$21.90'
+       old:"$43.90",new:'$21.90',
+       categoryId:1,
      },
      {
        id: 2,
@@ -25,6 +26,8 @@ export class ShopComponent {
        alt:'Side 2',
        title:'Miro Dinning Table',
       productId:2,old:"$83.90",new:'$52.90',
+             categoryId:2,
+
      },
      {
        id: 3,
@@ -33,7 +36,9 @@ export class ShopComponent {
        alt:'Side 3',
        title:'Janus Table Lamp',
        productId:3,
-       old:"$73.90",new:'$41.90'
+       old:"$73.90",new:'$41.90',
+              categoryId:3,
+
      },
      {
        id: 4,
@@ -43,7 +48,8 @@ export class ShopComponent {
        title:'discus Floor and Table',
        productId:4,
        old:"$199.90",new:'$150.90',
-       stock:0
+       stock:0,
+       categoryId:4,
      },
       {
        id: 5,
@@ -54,7 +60,9 @@ export class ShopComponent {
        productId:1,
        isNew:true,
        old:"$43.90",discount:50,
-              stock:0
+              stock:0,
+                     categoryId:1,
+
      },
      {
       stock:4,
@@ -65,6 +73,8 @@ export class ShopComponent {
        isNew:false,
        title:'Miro Dinning Table',
       productId:2,old:"$83.90",discount:20,
+             categoryId:2,
+
      },
      {
        id: 7,
@@ -75,7 +85,9 @@ export class ShopComponent {
        title:'Janus Table Lamp',
        productId:3,
        old:"$73.90",new:'$41.90',
-                     stock:3
+                     stock:3,
+                            categoryId:3,
+
      },
      {
        id: 8,
@@ -85,15 +97,16 @@ export class ShopComponent {
        title:'discus Floor and Table',
        productId:4,
        old:"$199.90",discount:40,
-                     stock:5
+                     stock:5,       categoryId:4,
+
      },
    ];
   allProducts=[...this.products];
-  displayedProducts:any[]=[...this.products];
+  displayedProducts:any[]=[...this.products.sort(this.sortByRevelance)];
   getData(event:any){
       const selectionKey=event.target.value;
       switch(selectionKey){
-        case "all":  this.displayedProducts=[...this.allProducts];break;
+        case "Relevance":  this.displayedProducts=this.products.sort(this.sortByRevelance);break;
         case "new":  this.displayedProducts=this.products.filter(product => product.isNew);break;
         case "nameAscend":  this.displayedProducts=this.products.sort((a,b)=>this.sortByName(a,b,'ascend'));break;
         case "nameDescend":  this.displayedProducts=this.products.sort((a,b)=>this.sortByName(a,b,'dscend'));break;
@@ -116,7 +129,7 @@ export class ShopComponent {
       }
       return returnValue;
     }
-    sortByPrice(a:any,b:any,key:string){
+  sortByPrice(a:any,b:any,key:string){
      let priceOne=parseFloat(a.old.split('$')[1]);
      let priceTwo=parseFloat(b.old.split('$')[1]);
      let returnValue=0;
@@ -133,6 +146,19 @@ export class ShopComponent {
 
       return returnValue;
     }
+
+     sortByRevelance(a:any,b:any){
+     let categoryOne=a.categoryId;
+     let categoryTwo=b.categoryId;
+      if (categoryOne < categoryTwo) {
+        return -1;
+      }
+      if (categoryOne > categoryTwo) {
+        return 1;
+      }
+      return 0;
+    }
+
 }
 
 
