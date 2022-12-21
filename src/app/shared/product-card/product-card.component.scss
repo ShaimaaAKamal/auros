@@ -2,6 +2,12 @@
 
 .trendHead{
     z-index:2;
+    .trendNew{
+       left:1rem;
+    }
+    .trendDiscount{
+        right:1rem;
+    }
 }
 .carsouelCard:hover{
     .carsouelInfo{

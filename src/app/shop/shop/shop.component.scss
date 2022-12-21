@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+.selectWidth{
+    width: 100%;
+    .form-select{
+        width: 100%;
+        background-color: transparent !important;
+        border: none;
+        border-bottom: 1px solid $borderColor;
+        color: $textGray;
+        &:focus{
+            box-shadow: none;
+        }
+    }
+}
+
+.borderBottom{
+    border-bottom: 1px solid $borderColor;
+}
+
+@media screen and (min-width:768px) {
+    .selectWidth{
+    width: 70%;
+     .form-select{
+        width: 75%;
+    }
+    label{
+        width:25%;
+    }
+}
+
+}
+
+@media screen and (min-width:992px) {
+    .selectWidth{
+    width: 45%;
+      .form-select{
+        width: 80%;
+    }
+    label{
+        width:20%;
+    }
+}
+}
+
+@media screen and (min-width:1200px) {
+    .selectWidth{
+    width: 40%;
+}
+}

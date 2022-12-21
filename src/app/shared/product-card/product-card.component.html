@@ -1,16 +1,16 @@
  <div>
                      <div class="position-relative carsouelCard">
                         <div>
-                            <img [src]="product.src" [alt]="product.alt" [title]="product.title">
+                            <img [src]="product.src" [alt]="product.alt" [title]="product.title" [ngClass]="imageWidth ? 'w-100' : '' ">
                         </div>
                         <div class="d-flex justify-content-between p-3 top-0 start-0 position-absolute w-100 trendHead">
-                            <span class="fs-xs textSite">New</span>
-                            <span *ngIf="product.discount" class="fs-xs text-dark  border-bottom border-dark">-{{product.discount}}%</span>
+                            <span *ngIf="product.isNew" class="fs-xs textSite position-absolute  trendNew">New</span>
+                            <span *ngIf="product.discount" class="fs-xs text-dark border-bottom position-absolute trendDiscount border-dark">-{{product.discount}}%</span>
                         </div>
                         <div class="position-absolute w-100 h-100  top-0 start-0  d-none carsouelInfo">
                             <div>
                                 <div>
-                                    <img [src]="product.srcHover" alt="product.alt" [title]="product.title">
+                                    <img [src]="product.srcHover" alt="product.alt" [title]="product.title" [ngClass]="imageWidth ? 'w-100' : '' ">
                                 </div>
                                 <div class="position-absolute w-100 bottom-0 hoverInfo pb-3">
                                     <div class="d-flex justify-content-center align-items-center">

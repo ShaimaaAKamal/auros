@@ -1,1 +1,45 @@
-<app-page-header [paths]="paths"></app-page-header>
+<app-page-header [paths]="paths" [mainTitle]="mainTitle"></app-page-header>
+<div class="container-fluid py-5">
+  <div class="row">
+      <div class="col-md-4 col-lg-3">
+        <div class="bg-danger">
+            <div>
+              
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-8">
+        <div class="d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center pb-4 borderBottom">
+                <div class="d-none d-md-block">
+                 <span class="material-symbols-outlined">
+                    apps
+                 </span>
+                <span class="ms-2 material-symbols-outlined">
+                    format_list_bulleted
+                </span>
+                </div>
+                <div class="d-flex align-items-center px-2 selectWidth">
+                    <label for="relevanceMenu" class="pe-3 text-muted small d-inline-block d-none d-md-inline-block text-end">Sort by:</label>
+                    <select class="form-select rounded-0 fs-sm" id='relevanceMenu'  (change)="getData($event)" aria-label="product display options">
+                        <option selected  value="all">Relevance</option>
+                        <option  value="new">New Products first</option>
+                        <option  value="nameAscend">Name A to Z</option>
+                        <option  value="nameDescend">Name Z to A</option>
+                        <option  value="priceAscend">Price low to high</option>
+                        <option  value="priceDescend">price high to low</option>
+                        <option  value="stock">In Stock</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+            </div>
+            <div class="my-4">
+                <app-products [products]="displayedProducts"></app-products>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

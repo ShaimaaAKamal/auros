@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewDesignComponent } from './home/new-design/new-design.component';
 import { CategoryItemsCardComponent } from './home/category-items-card/category-items-card.component';
 import { SidenavItemsComponent } from './home/new-design/home-side-nav/sidenav-items/sidenav-items.component';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { HomeSideNavComponent } from './home/new-Design/home-side-nav/home-side-nav.component';
 import { DiscoverSectionComponent } from './home/discover-section/discover-section.component';
 import { HomeBlogSectionComponent } from './home/home-blog-section/home-blog-section.component';
@@ -40,7 +39,6 @@ import { SharedModule } from './shared/shared.module';
     CategoryItemsCardComponent,
     HomeSideNavComponent,
     SidenavItemsComponent,
-    ProductCardComponent,
     DiscoverSectionComponent,
     HomeBlogSectionComponent,
     HomeBlogCardComponent,
