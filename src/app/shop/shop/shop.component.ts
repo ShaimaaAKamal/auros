@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
-
+  paths=[{title:'Home',url:''},{title:''}]
 }
