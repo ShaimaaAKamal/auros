@@ -1,7 +1,6 @@
-<div class="pageHeader d-flex justify-content-end align-items-center pe-5">
+<div class="pageHeader d-flex justify-content-center justify-content-sm-end align-items-center pe-sm-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-
             <li *ngFor="let path of paths; let last=last;" [ngClass]="['breadcrumb-item fs-sm', last ? 'active' : '']">
                 <a *ngIf="!last" [routerLink]="path.url" class="text-decoration-none text-dark fs-sm">{{path.title}}</a>
                 <span *ngIf="last">{{path.title}}</span>
