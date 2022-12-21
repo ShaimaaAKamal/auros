@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  paths=[{title:'Home',url:''},{title:'Contact us'}]
 
 }
