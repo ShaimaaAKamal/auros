@@ -35,7 +35,6 @@ import { SharedModule } from './shared/shared.module';
     HomeHeadingComponent,
     CategoriesComponent,
     homeTrendingComponent,
-    // TrendingComponent,
     NewDesignComponent,
     CategoryItemsCardComponent,
     HomeSideNavComponent,

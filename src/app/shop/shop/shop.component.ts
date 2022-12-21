@@ -111,6 +111,8 @@ export class ShopComponent {
    ];
   allProducts=[...this.products];
   displayedProducts:any[]=[...this.products.sort(this.sortByRevelance)];
+  totalProductsNumber:number=this.allProducts.length;
+  displayedProductsNumber:number = this.displayedProducts.length> 12 ? 12 : this.displayedProducts.length;
   displayGrid(){
     this.cardDisplayView='';
   }
@@ -129,6 +131,9 @@ export class ShopComponent {
         case "stock":  this.displayedProducts=this.products.filter(product => product.stock && product.stock > 0);break;
         case "random":  this.displayedProducts=[...this.allProducts];break;
       }
+      this.totalProductsNumber=this.displayedProducts.length;
+       this.displayedProductsNumber = this.displayedProducts.length> 12 ? 12 : this.displayedProducts.length;
+
   }
 
   sortByName(a:any,b:any,key:string){
