@@ -1,0 +1,45 @@
+ <div>
+                     <div class="position-relative carsouelCard">
+                        <div>
+                            <img [src]="product.src" [alt]="product.alt" [title]="product.title">
+                        </div>
+                        <div class="d-flex justify-content-between p-3 top-0 start-0 position-absolute w-100 trendHead">
+                            <span class="fs-xs textSite">New</span>
+                            <span *ngIf="product.discount" class="fs-xs text-dark  border-bottom border-dark">-{{product.discount}}%</span>
+                        </div>
+                        <div class="position-absolute w-100 h-100  top-0 start-0  d-none carsouelInfo">
+                            <div>
+                                <div>
+                                    <img [src]="product.srcHover" alt="product.alt" [title]="product.title">
+                                </div>
+                                <div class="position-absolute w-100 bottom-0 hoverInfo pb-3">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <a [routerLink]="'/shop/product/' + product.productId" class="d-none d-xl-inline-block">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
+                                        <span (click)="addToCart()">
+                                            <i class="fa-solid fa-cart-shopping" #cart ></i>
+                                        </span>
+                                        <span (click)="addToWishlist($event,product.productId)">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </span>
+                                        <span (click)="addToCompare($event,product.productId)">
+                                            <i class="fa-solid fa-code-compare" #compare></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="pt-3 text-center">
+                         <h6 class="mb-1">
+                             <a [routerLink]="'/shop/product/' + product.productId" class="text-decoration-none productTitle">
+                              {{product.title}}
+                            </a>
+                        </h6>
+                         <p class="d-flex align-items-center  justify-content-center  pb-3">
+                            <span  [ngClass]=" ['pt-1',product.discount?'textGray text-decoration-line-through fs-sm':'text-dark small' ,'me-2' ,'fw-light']">{{product.old}}</span>
+                            <span *ngIf="product.discount" class="pt-1 text-dark small">${{(product.old).split('$')[1]*product.discount/100}}</span>
+                        </p>
+                     </div>
+                </div>
