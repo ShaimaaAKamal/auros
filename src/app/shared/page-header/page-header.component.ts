@@ -6,4 +6,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PageHeaderComponent {
 @Input('paths') paths:any;
-}
+@Input('mainTitle') mainTitle:string='';
+ }

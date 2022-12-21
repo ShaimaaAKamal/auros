@@ -1,4 +1,5 @@
-<div class="pageHeader d-flex justify-content-center justify-content-sm-end align-items-center pe-sm-5">
+<div class="pageHeader flex-column d-flex align-items-center align-items-sm-end justify-content-center pe-sm-5">
+    <h2 *ngIf="mainTitle" class="h3 fw-semibold mb-2">{{mainTitle}}</h2>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li *ngFor="let path of paths; let last=last;" [ngClass]="['breadcrumb-item fs-sm', last ? 'active' : '']">
