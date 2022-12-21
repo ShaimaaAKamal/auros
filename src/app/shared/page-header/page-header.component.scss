@@ -1,0 +1,20 @@
+@import "../../../styles.scss";
+
+.pageHeader{
+    background-image: url('../../../assets/images/bg-beagrumb.jpg');
+    background-size: cover;
+    height:250px;
+}
+.breadcrumb-item{
+    font-weight: 300;
+    &.active{
+    color:$btnColor;
+    opacity: .5;
+    }
+}
+
+@media screen and (min-width:992px){
+    .pageHeader{
+            background-position: 30% top;
+    }
+}

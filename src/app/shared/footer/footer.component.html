@@ -1,0 +1,97 @@
+<section class="bg-white footer ">
+     <div class="parent">
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-md-6 col-xl-4">
+                    <div class="pb-2 pb-md-0">
+                        <img src="../../assets/images/logo.png" alt="logo image"/>
+                        <p class="fs-sm fw-light my-4 pt-2 textDark">2593 Timbercrest Road, Chisana, Alaska Badalas<br/>
+                        United State</p>
+                        <p class="fs-sm fw-light my-2 textDark">(+91)7-723-46089867</p>
+                        <p class="fs-sm fw-light my-2 textDark">
+                            <span class="footerMail pb-1">demo@demo.com</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xl-2">
+                      <div class="dropdown ">
+                        <a class="nav-link dropdown-toggle d-flex fw-semibold justify-content-between align-items-center d-md-inline-block" role="button" (click)="handleOpenClick(productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
+                            <span>Our Products</span>
+                            <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        </a>
+                        <ul class="dropdown-menu" #productsMenu>
+                             <li><a class="dropdown-item" routerLink="/shop/bestSeller">Best Sellers</a></li>
+                             <li><a class="dropdown-item" routerLink="/shop/newProducts">New In</a></li>
+                             <li><a class="dropdown-item" routerLink="shop/categories/7/TV_Shelfs">Shelfs</a></li>
+                             <li><a class="dropdown-item" routerLink="shop/categories/6/Sofas">Sofas</a></li>
+                        </ul>
+                      </div>
+                </div>
+                  <div class="col-md-3 col-xl-2">
+                    <div class="dropdown ">
+                        <a class="nav-link dropdown-toggle d-flex fw-semibold justify-content-between align-items-center d-md-inline-block" role="button" (click)="handleOpenClick(LinksMenu)"  data-bs-toggle="dropdownLinks" aria-expanded="false">
+                            <span>Useful Links</span>
+                            <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        </a>
+                        <ul class="dropdown-menu" #LinksMenu>
+                             <li><a class="dropdown-item" routerLink="/about">About us</a></li>
+                             <li><a class="dropdown-item" routerLink="/blog">Blog</a></li>
+                             <li><a class="dropdown-item" routerLink="/FAQS">FAQS</a></li>
+                             <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="pt-2 pt-md-0">
+                        <h6 class="fw-semibold textDark">Newsletter signup</h6>
+                        <p class="fs-sm fw-light my-4 py-1 text-muted">
+                            Stay Updated on all that's new add noteworthy
+                        </p>
+                        <form class="news" (ngSubmit)="handleSubscribe()" >
+                                <div class="d-flex">
+                                     <input type="email" class="form-control me-2 w-75" name="email" placeholder="Your email..."  [(ngModel)]="emailAddress" >
+                                     <button type="submit" class="btn w-25">Subscribe</button>
+                                </div>
+                                <div class="alert alert-danger text-danger py-2 mt-2 fs-sm " *ngIf="!valid">
+                                    <i class="fa-solid fa-xmark me-2"></i>
+                                    <span class="fw-light">Invalid email address</span></div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input rounded-0" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label fs-sm fw-light text-muted" for="flexCheckDefault">
+                                         Enim quis fugiat consequat elit minim nisi eu occaecat occaecat deserunt aliquip nisi ex deserunt.
+                                    </label>
+                                </div>
+                        </form>
+                        <div  class ="socials d-flex align-items-center justify-content-center mt-4 pt-2 justify-content-md-start">
+                            <a href="https:www.facebook.com"  class="pe-2">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.twitter.com" class="px-2">
+                                 <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com" class="px-2">
+                                 <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://www.pinterest.com/" class="px-2">
+                                <i class="fa-brands fa-pinterest"></i>
+                            </a>
+                            <a href="https://www.instagram.com/"  class="ps-2">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyRights mt-md-4  mt-xl-5 d-flex flex-column flex-md-row justify-content-md-between align-items-center py-3 mx-3">
+                    <p class="fs-sm fw-light my-2 my-md-0 textDark text-center text-md-start">Copyright © 2019 <span class="text-dark fw-semibold">Auros</span>. All rights reserved.</p>
+                    <div class="'sponsor mt-3 text-center text-md-start">
+                        <i class="fa-brands fa-paypal"></i>
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-google-pay"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-amazon-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</section>
