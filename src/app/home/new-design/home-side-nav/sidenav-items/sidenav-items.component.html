@@ -11,7 +11,7 @@
         <owl-carousel-o *ngIf="Data.length ==2 || Data.length ==1" [options]="customOptions">
             <ng-container *ngFor="let slide of Data;">
                     <ng-template  carouselSlide [id]="(slide.id).toString()">
-                                    <app-product-card [product]="slide"></app-product-card>
+                             <app-product-card [product]="slide"></app-product-card>
                     </ng-template>
             </ng-container>
         </owl-carousel-o>

@@ -5,7 +5,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.scss']
 })
-export class TrendingComponent {
+export class homeTrendingComponent {
 
     Trending = [
      {

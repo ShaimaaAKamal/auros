@@ -11,7 +11,7 @@ import { FaqComponent } from './faq/faq.component';
 import { FormsModule } from '@angular/forms';
 import { HomeHeadingComponent } from './home/home-heading/home-heading.component';
 import { CategoriesComponent } from './home/categories/categories.component';
-import { TrendingComponent } from './home/trending/trending.component';
+import { homeTrendingComponent } from './home/trending/trending.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewDesignComponent } from './home/new-design/new-design.component';
@@ -34,7 +34,8 @@ import { SharedModule } from './shared/shared.module';
     FaqComponent,
     HomeHeadingComponent,
     CategoriesComponent,
-    TrendingComponent,
+    homeTrendingComponent,
+    // TrendingComponent,
     NewDesignComponent,
     CategoryItemsCardComponent,
     HomeSideNavComponent,
