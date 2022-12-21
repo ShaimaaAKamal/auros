@@ -1,7 +1,7 @@
 <div class="container-fluid">
-    <div class="row">
-        <div *ngFor="let product of products" class="col-md-6 col-lg-4">
-            <app-product-card [product]="product" [imageWidth] ="'setWidth'"></app-product-card>
+    <div class="row gy-5">
+        <div *ngFor="let product of products" [ngClass]="[!cardDisplayView ? 'col-md-6 col-lg-4' : 'col-12']">
+            <app-product-card [product]="product" [imageWidth] ="!cardDisplayView ?'w-100':'w-75'" [cardDisplayView]="cardDisplayView"></app-product-card>
         </div>
     </div>
 </div>

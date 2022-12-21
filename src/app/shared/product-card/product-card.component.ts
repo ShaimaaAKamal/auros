@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ProductCardComponent {
   @Input('product') product:any;
   @Input ('imageWidth') imageWidth:string='';
+  @Input ('cardDisplayView') cardDisplayView:string='';
    addToCart(){
   }
   addToWishlist(event:any,id:number){

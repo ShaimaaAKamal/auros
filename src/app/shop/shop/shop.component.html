@@ -15,10 +15,10 @@
         <div class="d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center pb-4 borderBottom">
                 <div class="d-none d-md-block">
-                 <span class="material-symbols-outlined">
+                 <span [ngClass]="['material-symbols-outlined ',!cardDisplayView ? 'textDark' : 'textGray']" (click)="displayGrid()" #grid>
                     apps
                  </span>
-                <span class="ms-2 material-symbols-outlined">
+                <span [ngClass]="['ms-2 material-symbols-outlined', cardDisplayView ? 'textDark' : 'textGray']" (click)="displayList()" #list>
                     format_list_bulleted
                 </span>
                 </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="my-4">
-                <app-products [products]="displayedProducts"></app-products>
+                <app-products [products]="displayedProducts" [cardDisplayView]="cardDisplayView"></app-products>
             </div>
         </div>
     </div>

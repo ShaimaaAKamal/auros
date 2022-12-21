@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
+  cardDisplayView:string='';
   paths=[{title:'Home',url:''},{title:''}];
   mainTitle='Home';
   products=[
@@ -17,7 +18,8 @@ export class ShopComponent {
        title:'Teapot',
        productId:1,
        old:"$43.90",new:'$21.90',
-       categoryId:1,
+       categoryId:1,              
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
      {
        id: 2,
@@ -27,6 +29,7 @@ export class ShopComponent {
        title:'Miro Dinning Table',
       productId:2,old:"$83.90",new:'$52.90',
              categoryId:2,
+                   desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
 
      },
      {
@@ -38,11 +41,12 @@ export class ShopComponent {
        productId:3,
        old:"$73.90",new:'$41.90',
               categoryId:3,
-
+      desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
      {
        id: 4,
-       src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
+             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
+       ,src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
        srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
        alt:'Side 4',
        title:'discus Floor and Table',
@@ -53,6 +57,7 @@ export class ShopComponent {
      },
       {
        id: 5,
+             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
        srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
        alt:'Side 1',
@@ -69,6 +74,7 @@ export class ShopComponent {
        id: 6,
        src:"/assets/images/trending/table/brown-bear-printed-sweater2.jpg",
        srcHover:"/assets/images/trending/table/brown-bear-printed-sweater3.jpg",
+             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        alt:'Side 2',
        isNew:false,
        title:'Miro Dinning Table',
@@ -82,6 +88,7 @@ export class ShopComponent {
        srcHover:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
        alt:'Side 3',
        isNew:true,
+             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        title:'Janus Table Lamp',
        productId:3,
        old:"$73.90",new:'$41.90',
@@ -94,6 +101,7 @@ export class ShopComponent {
        src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
        srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
        alt:'Side 4',
+             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        title:'discus Floor and Table',
        productId:4,
        old:"$199.90",discount:40,
@@ -103,6 +111,12 @@ export class ShopComponent {
    ];
   allProducts=[...this.products];
   displayedProducts:any[]=[...this.products.sort(this.sortByRevelance)];
+  displayGrid(){
+    this.cardDisplayView='';
+  }
+  displayList(){
+    this.cardDisplayView='list';
+  }
   getData(event:any){
       const selectionKey=event.target.value;
       switch(selectionKey){
@@ -147,7 +161,7 @@ export class ShopComponent {
       return returnValue;
     }
 
-     sortByRevelance(a:any,b:any){
+  sortByRevelance(a:any,b:any){
      let categoryOne=a.categoryId;
      let categoryTwo=b.categoryId;
       if (categoryOne < categoryTwo) {
