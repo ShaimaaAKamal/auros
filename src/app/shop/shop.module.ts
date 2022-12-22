@@ -8,6 +8,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductsComponent } from './products/products.component';
 import { SharedModule } from '../shared/shared.module';
+import { FilterComponentComponent } from './filter-component/filter-component.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     CheckoutComponent,
     WishlistComponent,
     ProductsComponent,
+    FilterComponentComponent,
   ],
   imports: [
     CommonModule,
