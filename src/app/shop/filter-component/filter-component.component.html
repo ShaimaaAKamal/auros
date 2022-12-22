@@ -120,4 +120,18 @@
                         <span (click)="handleColorSelect($event,color.name)" [id]="color.name" class='colorPlate' *ngFor="let color of colors" [style.backgroundColor]="color.value"></span> 
                   </div>
        </div>
+        <div class="form-check borderBottom py-3">
+                    <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" name="newProducts"  value="newProducts"  id="newProducts">
+                    <label class="form-check-label fs-sm textGray" for="newProducts">
+                        <span>New Products</span>
+                        <span class="ms-1 fs-xs text-muted">(10)</span>
+                    </label>
+      </div>
+       <div class="form-check borderBottom py-3">
+                    <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" name="Discounts"  value="Discounts"  id="Discounts">
+                    <label class="form-check-label fs-sm textGray" for="Discounts">
+                        <span>Discounts</span>
+                        <span class="ms-1 fs-xs text-muted">(20)</span>
+                    </label>
+      </div>
 </div>
