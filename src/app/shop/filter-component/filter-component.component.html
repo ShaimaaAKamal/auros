@@ -12,8 +12,8 @@
            </div>
         </div>
     </div>
-       <div class="dropdown" >
-                  <a class="nav-link dropdown-toggle d-flex borderBottom pb-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
+       <div class="dropdown borderBottom" >
+                  <a class="nav-link dropdown-toggle d-flex  pb-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
                         <span>Categories</span>
                         <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
                         <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" ></i>
@@ -50,14 +50,14 @@
                         </div>
                   </ul>
        </div>
-        <div class="dropdown" >
-                  <a class="nav-link dropdown-toggle d-flex borderBottom py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,PriceMenu)" data-bs-toggle="dropdownPrice" aria-expanded="false">
+        <div class="dropdown borderBottom" >
+                  <a class="nav-link dropdown-toggle d-flex  py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,PriceMenu)" data-bs-toggle="dropdownPrice" aria-expanded="false">
                         <span>Price</span>
                         <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
                         <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none"></i>
                   </a>
                  <div class="dropdown-menu border-0" #PriceMenu>
-                      <div class="range pt-3 pb-0">
+                      <div class="range">
                         <input type="range" class="form-range" min="0" max="1000" value="0"  (change)="priceChange($event)" step='1' id="priceRange" />
                       </div>
                       <div class="textGray fs-sm fw-light d-flex justify-content-between align-items-center">
@@ -65,5 +65,27 @@
                         <span >{{maxPrice}}$</span>
                       </div>
                   </div>
+       </div>
+        <div class="dropdown borderBottom" >
+                  <a class="nav-link dropdown-toggle d-flex  py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,ManufacturersMenu)" data-bs-toggle="dropdownManufacturers" aria-expanded="false">
+                        <span>Manufacturers</span>
+                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" ></i>
+                  </a>
+                 <ul class="dropdown-menu border-0" #ManufacturersMenu>
+                             <li *ngFor="let manufacturer of Manufacturers">
+                                <div *ngIf="manufacturer['noOfProducts'] > 0" class="position-relative"> 
+                                    <a class="dropdown-item" title="category.name">
+                                        <div class="form-check">
+                                        <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" [name]="manufacturer.name.split(' ').join('_')" [value]="manufacturer.name.split(' ').join('_')" [id]="manufacturer.name.split(' ').join('_')">
+                                        <label class="form-check-label fs-sm textGray" [for]="manufacturer.name.split(' ').join('_')">
+                                        <span>{{manufacturer.name}}</span>
+                                        <span class="ms-1 fs-xs text-muted">({{manufacturer['noOfProducts']}})</span>
+                                        </label>
+                                        </div>
+                                   </a>
+                                </div>
+                            </li>
+                  </ul>
        </div>
 </div>

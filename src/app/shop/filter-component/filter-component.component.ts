@@ -121,8 +121,8 @@ export class FilterComponentComponent {
   mainCategories:any[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1},{name:'Dinning Chairs',id:2},{name:'Side Board',id:3},{name:'Cermaic Tiles',id:4},{name:'Seat',id:5}]},
             {title:'Living Room',categories:[{name:'Sofas',id:6},{name:'TV Shelfs',id:7},{name:'Coffee Tables',id:8},{name:'Bed Sheet',id:9},{name:'Cusions',id:10}]},
             {title:'Decoration',categories:[{name:'Lamps',id:11},{name:'Lighting',id:12},{name:'Furnitures',id:13},{name:'Speakers',id:14},{name:'Stools',id:15}]}
-           ]
-
+           ];
+  Manufacturers:any[]=[{name:'Graphic Design',id:1,ManufactureId:1,noOfProducts:4},{name:'Web Design',id:2,ManufactureId:1,noOfProducts:3}];
 
 handleOpenClick(event:any,menuElement:HTMLElement){
   menuElement.classList.toggle('static');
