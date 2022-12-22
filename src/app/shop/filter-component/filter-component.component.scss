@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+.static{
+    position: static;
+    display: block;
+}
+.filter{
+    border:1px solid $borderColor;
+    .dropdown-item{
+        width: auto;
+        padding-right:0;
+        div{
+            width: fit-content;
+        }
+    }
+}
+.borderBottom{
+    border-bottom: 1px solid $borderColor;
+}
