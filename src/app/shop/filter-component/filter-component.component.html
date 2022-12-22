@@ -1,18 +1,30 @@
 <div class="filter p-3">
     <h5 class="mb-4 pb-3">Filter By</h5>
-             <div class="dropdown" >
+    <div *ngIf="filterSelection.length > 0" class="mb-3">
+        <h6 class="d-flex mb-0 align-items-center clearFilter p-2 justify-content-between">
+            <span class="fw-light small">Clear Filters</span>
+            <span><i class="fa-solid textDark small fa-eraser" (click)="clearFilter()"></i></span>
+        </h6>
+        <div class="bgGray p-2 pb-0">
+           <div *ngFor="let selection of filterSelection" class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-light small">{{selection}}</span>
+                <i class="fa-solid fa-xmark" (click)="clearCheckField($event)"></i>
+           </div>
+        </div>
+    </div>
+       <div class="dropdown" >
                   <a class="nav-link dropdown-toggle d-flex borderBottom pb-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick(productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
                         <span>Categories</span>
                         <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon" #arrowDown></i>
                         <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" #arrowUp></i>
                     </a>
-                        <ul class="dropdown-menu border-0" #productsMenu>
+                    <ul class="dropdown-menu border-0" #productsMenu>
                         <div *ngFor="let mainCategory of mainCategories">
                              <li *ngFor="let category of mainCategory.categories">
                                 <div *ngIf="category['noOfProducts'] > 0" class="position-relative"> 
-                                    <a class="dropdown-item" [routerLink]="'/shop/categories/'+ category.id +'/' + category.name.split(' ').join('_') ">
+                                    <a class="dropdown-item" title="category.name">
                                     <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" [value]="category.name.split(' ').join('_')" [id]="category.name.split(' ').join('_')">
+                                    <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" [name]="category.name.split(' ').join('_')" [value]="category.name.split(' ').join('_')" [id]="category.name.split(' ').join('_')">
                                     <label class="form-check-label fs-sm textGray" [for]="category.name.split(' ').join('_')">
                                     <span>{{category.name}}</span>
                                     <span class="ms-1 fs-xs text-muted">({{category['noOfProducts']}})</span>
@@ -21,11 +33,12 @@
                                 </a>
                                  <div *ngIf="category.subCategories.length >0" class="">
                                      <span class="textDark ms-1 pb-2 position-absolute top-0 end-0 pt-1" (click)="showSubCategories($event)">
-                                        <i class="fa-solid fa-plus fs-sm"></i></span>
+                                        <i class="fa-solid fa-plus fs-sm"></i>
+                                    </span>
                                      <div class="ms-5 d-none" >
                                         <div class="form-check" *ngFor="let subCat of category.subCategories">
-                                            <input class="form-check-input" type="checkbox" [value]="category.name.split(' ').join('_')" [id]="category.name.split(' ').join('_')">
-                                            <label class="form-check-label fs-sm textGray" [for]="category.name.split(' ').join('_')">
+                                            <input class="form-check-input" type="checkbox" (change)="handleCategorySelect($event)" [value]="subCat.name.split(' ').join('_')" [id]="subCat.name.split(' ').join('_')">
+                                            <label class="form-check-label fs-sm textGray" [for]="subCat.name.split(' ').join('_')">
                                             <span>{{subCat.name}}</span>
                                             <span class="ms-1 fs-xs text-muted">({{subCat['noOfProducts']}})</span>
                                             </label>
