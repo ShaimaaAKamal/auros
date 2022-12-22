@@ -88,4 +88,36 @@
                             </li>
                   </ul>
        </div>
+        <div class="dropdown borderBottom" >
+                  <a class="nav-link dropdown-toggle d-flex  py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,sizeMenu)" data-bs-toggle="dropdownsize" aria-expanded="false">
+                        <span>Size</span>
+                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" ></i>
+                  </a>
+                 <ul class="dropdown-menu border-0" #sizeMenu>
+                             <li *ngFor="let size of sizes">
+                                <div *ngIf="size['noOfProducts'] > 0" class="position-relative"> 
+                                    <a class="dropdown-item" title="category.name">
+                                        <div class="form-check">
+                                        <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" [name]="size.name.split(' ').join('_')" [value]="size.name.split(' ').join('_')" [id]="size.name.split(' ').join('_')">
+                                        <label class="form-check-label fs-sm textGray" [for]="size.name.split(' ').join('_')">
+                                        <span>{{size.name}}</span>
+                                        <span class="ms-1 fs-xs text-muted">({{size['noOfProducts']}})</span>
+                                        </label>
+                                        </div>
+                                   </a>
+                                </div>
+                            </li>
+                  </ul>
+       </div>
+       <div class="dropdown borderBottom" >
+                  <a class="nav-link dropdown-toggle d-flex  py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,colorMenu)" data-bs-toggle="dropdownColor" aria-expanded="false">
+                        <span>Color</span>
+                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" ></i>
+                  </a>
+                 <div class="dropdown-menu border-0" #colorMenu>
+                        <span (click)="handleColorSelect($event,color.name)" [id]="color.name" class='colorPlate' *ngFor="let color of colors" [style.backgroundColor]="color.value"></span> 
+                  </div>
+       </div>
 </div>

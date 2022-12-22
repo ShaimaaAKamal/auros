@@ -19,3 +19,14 @@
 .borderBottom{
     border-bottom: 1px solid $borderColor;
 }
+.colorPlate{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin:.5rem;
+    outline: 1px solid $linkColor;
+    outline-offset: 1px;
+}
+.selectecColor{
+        outline: 5px solid $borderColor;
+}

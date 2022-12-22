@@ -8,8 +8,9 @@ import * as e from 'express';
 })
 export class FilterComponentComponent {
  
-   minPrice:number=0;
-   maxPrice:number=1000;
+  minPrice:number=0;
+  maxPrice:number=1000;
+  selected:Boolean=false;
 
   products=[
      {
@@ -123,7 +124,8 @@ export class FilterComponentComponent {
             {title:'Decoration',categories:[{name:'Lamps',id:11},{name:'Lighting',id:12},{name:'Furnitures',id:13},{name:'Speakers',id:14},{name:'Stools',id:15}]}
            ];
   Manufacturers:any[]=[{name:'Graphic Design',id:1,ManufactureId:1,noOfProducts:4},{name:'Web Design',id:2,ManufactureId:1,noOfProducts:3}];
-
+  sizes:any[]=[{name:'Xs',id:1,noOfProducts:4},{name:'M',id:2,noOfProducts:3},{name:'L',id:3,noOfProducts:2},{name:'XL',id:4,noOfProducts:4}];
+  colors:any[]=[{name:'Red',value:"#f00"},{name:'Green',value:"#0f0"},{name:'Blue',value:"#00f"},{name:'White',value:"#fff"},{name:'Black',value:"#000"}];
 handleOpenClick(event:any,menuElement:HTMLElement){
   menuElement.classList.toggle('static');
   menuElement.previousElementSibling?.children[1].classList.toggle('d-none');
@@ -144,12 +146,22 @@ ngOnInit(): void {
  } );
 }
 handleCategorySelect(event:any){
-  console.log(event.target.value);
   if(event.target.checked && !this.filterSelection.includes(event.target.value))
       this.filterSelection.push(event.target.value);
   else if (!event.target.checked){
       this.filterSelection.splice(this.filterSelection.indexOf(event.target.value),1);
   }
+}
+handleColorSelect(event:any,color:string){
+if(this.filterSelection.includes(color))
+{this.filterSelection.splice(this.filterSelection.indexOf(color),1);
+  event.target.classList.remove('selectecColor');
+}
+else
+{
+      this.filterSelection.push(color);
+     event.target.classList.add('selectecColor');
+}
 }
 priceChange(event:any){
   const minPriceValue=event.target.value;
@@ -163,8 +175,10 @@ clearFilter(){
 clearCheckField(event:any){
    const checkBoxId=event.target.previousElementSibling.innerHTML;
    const checkElemnet:any= document.getElementById(checkBoxId);
-      checkElemnet.checked=false;
-     this.filterSelection.splice(this.filterSelection.indexOf(checkBoxId),1);
+   if(checkElemnet.checked != undefined) checkElemnet.checked=false;
+  if(checkElemnet.classList.contains('selectecColor')) checkElemnet.classList.remove('selectecColor');
+
+   this.filterSelection.splice(this.filterSelection.indexOf(checkBoxId),1);
 
 }
 }
