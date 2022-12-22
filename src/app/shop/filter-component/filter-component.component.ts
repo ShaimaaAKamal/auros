@@ -7,10 +7,10 @@ import * as e from 'express';
   styleUrls: ['./filter-component.component.scss']
 })
 export class FilterComponentComponent {
-  @ViewChild('arrowDown') arrowDown:ElementRef;
-  @ViewChild('arrowUp') arrowUp:ElementRef;
-  clear:boolean=false;
-  changed:boolean=false;
+ 
+   minPrice:number=0;
+   maxPrice:number=1000;
+
   products=[
      {
        id: 1,
@@ -124,10 +124,10 @@ export class FilterComponentComponent {
            ]
 
 
-handleOpenClick(menuElement:HTMLElement){
+handleOpenClick(event:any,menuElement:HTMLElement){
   menuElement.classList.toggle('static');
-  this.arrowDown.nativeElement.classList.toggle('d-none');
-  this.arrowUp.nativeElement.classList.toggle('d-none');
+  menuElement.previousElementSibling?.children[1].classList.toggle('d-none');
+  menuElement.previousElementSibling?.children[2].classList.toggle('d-none');
 }
 showSubCategories(event:any){
   event.target.parentNode.nextElementSibling.classList.toggle('d-none');
@@ -150,6 +150,10 @@ handleCategorySelect(event:any){
   else if (!event.target.checked){
       this.filterSelection.splice(this.filterSelection.indexOf(event.target.value),1);
   }
+}
+priceChange(event:any){
+  const minPriceValue=event.target.value;
+  this.minPrice=minPriceValue;
 }
 clearFilter(){
   this.filterSelection=[];

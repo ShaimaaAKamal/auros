@@ -13,12 +13,12 @@
         </div>
     </div>
        <div class="dropdown" >
-                  <a class="nav-link dropdown-toggle d-flex borderBottom pb-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick(productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle d-flex borderBottom pb-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,productsMenu)" data-bs-toggle="dropdownProducts" aria-expanded="false">
                         <span>Categories</span>
-                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon" #arrowDown></i>
-                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" #arrowUp></i>
-                    </a>
-                    <ul class="dropdown-menu border-0" #productsMenu>
+                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none" ></i>
+                  </a>
+                 <ul class="dropdown-menu border-0" #productsMenu>
                         <div *ngFor="let mainCategory of mainCategories">
                              <li *ngFor="let category of mainCategory.categories">
                                 <div *ngIf="category['noOfProducts'] > 0" class="position-relative"> 
@@ -48,6 +48,22 @@
                                 </div>
                             </li>
                         </div>
-                     </ul>
+                  </ul>
+       </div>
+        <div class="dropdown" >
+                  <a class="nav-link dropdown-toggle d-flex borderBottom py-3 justify-content-between align-items-center" role="button" (click)="handleOpenClick($event,PriceMenu)" data-bs-toggle="dropdownPrice" aria-expanded="false">
+                        <span>Price</span>
+                        <i class="fa-solid fa-angle-down  mt-2 ms-lg-2 fa-sm arrowIcon"></i>
+                        <i class="fa-solid fa-angle-up  mt-2 ms-lg-2 fa-sm arrowIcon d-none"></i>
+                  </a>
+                 <div class="dropdown-menu border-0" #PriceMenu>
+                      <div class="range pt-3 pb-0">
+                        <input type="range" class="form-range" min="0" max="1000" value="0"  (change)="priceChange($event)" step='1' id="priceRange" />
+                      </div>
+                      <div class="textGray fs-sm fw-light d-flex justify-content-between align-items-center">
+                        <span >{{minPrice}}$</span>
+                        <span >{{maxPrice}}$</span>
+                      </div>
+                  </div>
        </div>
 </div>
