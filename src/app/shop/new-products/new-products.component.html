@@ -1,0 +1,24 @@
+<section class="newProducts my-5 px-3 py-4 d-md-block">
+    <h5 class="mb-4 pb-3">New Products</h5>
+    <div *ngFor="let product of products" class="p-2 borderBottom d-flex">
+        <div>
+            <img [src]="product.srcSmall" [alt]="product.alt" [title]="product.title" class="w-100">
+        </div>
+       <div class=" ms-3 pt-3">
+            <h6>
+                <a [routerLink]="'/shop/product/' + product.productId" class="text-decoration-none small productTitle">
+                    {{product.title}}
+                </a>
+            </h6>
+            <p [ngClass]="['d-flex align-items-center','justify-content-start mb-0 small']">
+                            <span  [ngClass]=" ['pt-1',product.discount?'textGray text-decoration-line-through fs-sm ':'text-dark ' ,'me-2 fw-light']">{{product.old}}</span>
+                            <span *ngIf="product.discount" class="pt-1 text-dark ">${{(product.old).split('$')[1]*product.discount/100}}</span>
+            </p>
+       </div>
+    </div>
+    <div class="p-2 pt-3  text-end seeAll">
+         <a [routerLink]="'/shop/newProducts'" class=" textDark fs-sm">
+            See All Products
+         </a>
+    </div>
+</section>

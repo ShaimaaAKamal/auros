@@ -1,0 +1,8 @@
+@import '../../../styles.scss';
+
+.newProducts{
+        border:1px solid $borderColor;
+        .seeAll a:hover{
+            color:$btnColor;
+        }
+}
