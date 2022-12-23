@@ -7,7 +7,8 @@ import * as e from 'express';
   styleUrls: ['./filter-component.component.scss']
 })
 export class FilterComponentComponent {
- 
+  // @ViewChild('minPriceSlider') minPriceSlider:ElementRef;
+  // @ViewChild('minPriceSlider') maxPriceSlider:ElementRef;
   minPrice:number=0;
   maxPrice:number=1000;
   selected:Boolean=false;
@@ -117,7 +118,7 @@ export class FilterComponentComponent {
 
      },
    ];
-  filterSelection:string[]=[];
+  filterSelection:string[]=[`${this.minPrice}$ - ${this.maxPrice}$`];
   subCategories=[{name:'Metal',id:1,categoryId:1},{name:'Wooden',id:2,categoryId:1}]
   mainCategories:any[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1},{name:'Dinning Chairs',id:2},{name:'Side Board',id:3},{name:'Cermaic Tiles',id:4},{name:'Seat',id:5}]},
             {title:'Living Room',categories:[{name:'Sofas',id:6},{name:'TV Shelfs',id:7},{name:'Coffee Tables',id:8},{name:'Bed Sheet',id:9},{name:'Cusions',id:10}]},
@@ -163,22 +164,34 @@ else
      event.target.classList.add('selectecColor');
 }
 }
-priceChange(event:any){
-  const minPriceValue=event.target.value;
-  this.minPrice=minPriceValue;
+priceChange(event:any,key:string){
+  const priceValue=event.target.value;
+  if(key=== 'min')
+  this.minPrice=priceValue;
+  else   this.maxPrice=priceValue;
+  this.filterSelection[0]=`${this.minPrice}$ - ${this.maxPrice}$`;
+
 }
 clearFilter(){
   this.filterSelection=[];
   const checkboxes=document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach((box:any) => box.checked=false)
+  checkboxes.forEach((box:any) => box.checked=false);
+  const selectedColors=document.querySelectorAll('.selectecColor')
+    selectedColors.forEach((color:any) => color.classList.remove('selectecColor'));
+
+  this.minPrice=0 ; this.maxPrice=1000
 }
 clearCheckField(event:any){
-   const checkBoxId=event.target.previousElementSibling.innerHTML;
-   const checkElemnet:any= document.getElementById(checkBoxId);
-   if(checkElemnet.checked != undefined) checkElemnet.checked=false;
-  if(checkElemnet.classList.contains('selectecColor')) checkElemnet.classList.remove('selectecColor');
+  const checkBoxId=event.target.previousElementSibling.innerHTML;
+  console.log(checkBoxId);
+   if(checkBoxId.includes('$')) {this.minPrice=0 ; this.maxPrice=1000}
+  else{
+      const checkElemnet:any= document.getElementById(checkBoxId);
+    if(checkElemnet.checked != undefined) checkElemnet.checked=false;
+    if(checkElemnet.classList.contains('selectecColor')) checkElemnet.classList.remove('selectecColor');
+    }
 
-   this.filterSelection.splice(this.filterSelection.indexOf(checkBoxId),1);
+  this.filterSelection.splice(this.filterSelection.indexOf(checkBoxId),1);
 
 }
 }
