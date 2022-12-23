@@ -1,1 +1,26 @@
-<p>side-header works!</p>
+<section class="shopSideNav p-4 d-none d-md-block">
+   <h5 class="mb-3">Home</h5>
+   <div *ngFor="let category of categories">
+        <div class='d-flex justify-content-between align-items-center'>
+            <div class="form-check fs-sm  mb-1 categoryOption">
+               <input class="form-check-input mt-2" type="radio" name="category" [id]="category.name.split(' ').join('_')">
+               <label class="form-check-label pt-7 textDark fw-light" [for]="category.name.split(' ').join('_')">
+                  {{category.name}}
+               </label>
+            </div>
+            <span class="textDark ms-1" *ngIf="category['noOfSubCategories'] > 0" (click)="showSubCategories($event)">
+                     <i class="fa-solid fa-plus textGray fs-sm pt-7"></i>
+            </span>
+        </div>
+        <div class="ps-3 d-none" *ngIf="category['noOfSubCategories'] > 0" >
+           <div    *ngFor="let subcategory of subCategories">
+               <div class="form-check fs-sm  mb-1 categoryOption" *ngIf="subcategory.categoryId === category.id">
+                  <input class="form-check-input mt-2" type="radio" name="subcategory" [id]="subcategory.name.split(' ').join('_')">
+                  <label class="form-check-label pt-7 textDark fw-light" [for]="subcategory.name.split(' ').join('_')">
+                     {{subcategory.name}}
+                  </label>
+               </div>
+           </div>
+        </div>
+   </div>
+</section>
