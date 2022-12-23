@@ -70,6 +70,18 @@ body{
        color:#fff;
     }
 }
+.darkBtn{
+    background-color: $linkColor;
+    padding:.8rem 2.5rem;
+    border:2px solid $linkColor;
+    font-weight: 400;
+    color:#fff;
+    &:hover{
+        background-color: transparent;
+        border-color: $linkColor;
+       color:$linkColor;
+    }
+}
 
 @media screen and (min-width:992px){
     .parent{
