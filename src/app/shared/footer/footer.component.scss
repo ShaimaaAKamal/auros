@@ -85,6 +85,9 @@ $socialColor:#666;
         padding: 0 .5rem;
     }
 }
+.borderTop{
+    border-top:1px solid $borderColor;
+}
 @media screen and (min-width:768px){
     .arrowIcon{
         display: none;
