@@ -5,11 +5,13 @@
             <div class="form-check fs-sm  mb-1 categoryOption">
                <input class="form-check-input mt-2" type="radio" name="category" [id]="category.name.split(' ').join('_')">
                <label class="form-check-label pt-7 textDark fw-light" [for]="category.name.split(' ').join('_')">
-                  {{category.name}}
+               <a class='text-reset text-decoration-none' [routerLink]="'/shop/categories/' + category.id + '/' + category.name.split(' ').join('_')">
+                                    {{category.name}}
+               </a>
                </label>
             </div>
             <span class="textDark ms-1" *ngIf="category['noOfSubCategories'] > 0" (click)="showSubCategories($event)">
-                     <i class="fa-solid fa-plus textGray fs-sm pt-7"></i>
+                     <i class="fa-solid fa-plus textGray fs-sm position-relative"></i>
             </span>
         </div>
         <div class="ps-3 d-none" *ngIf="category['noOfSubCategories'] > 0" >
@@ -17,7 +19,9 @@
                <div class="form-check fs-sm  mb-1 categoryOption" *ngIf="subcategory.categoryId === category.id">
                   <input class="form-check-input mt-2" type="radio" name="subcategory" [id]="subcategory.name.split(' ').join('_')">
                   <label class="form-check-label pt-7 textDark fw-light" [for]="subcategory.name.split(' ').join('_')">
-                     {{subcategory.name}}
+                     <a class='text-reset text-decoration-none' [routerLink]="'/shop/subCategories/' + subcategory.id + '/' + subcategory.name.split(' ').join('_')">
+                           {{subcategory.name}}   
+                     </a>
                   </label>
                </div>
            </div>
