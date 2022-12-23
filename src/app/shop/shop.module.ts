@@ -9,6 +9,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductsComponent } from './products/products.component';
 import { SharedModule } from '../shared/shared.module';
 import { FilterComponentComponent } from './filter-component/filter-component.component';
+import { NewProductsComponent } from './new-products/new-products.component';
+import { SideHeaderComponent } from './side-header/side-header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FilterComponentComponent } from './filter-component/filter-component.co
     WishlistComponent,
     ProductsComponent,
     FilterComponentComponent,
+    NewProductsComponent,
+    SideHeaderComponent,
   ],
   imports: [
     CommonModule,
