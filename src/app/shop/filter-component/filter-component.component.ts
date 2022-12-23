@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import * as e from 'express';
 
 @Component({
@@ -7,7 +7,8 @@ import * as e from 'express';
   styleUrls: ['./filter-component.component.scss']
 })
 export class FilterComponentComponent {
-  @Input('moveFilterMenu') moveFilterMenu:boolean;
+  @Input() moveFilterMenu:boolean;
+  @Output() moveFilterMenuChanged: EventEmitter<boolean> =   new EventEmitter();
   minPrice:number=0;
   maxPrice:number=1000;
   selected:Boolean=false;
@@ -191,6 +192,10 @@ clearCheckField(event:any){
     }
 
   this.filterSelection.splice(this.filterSelection.indexOf(checkBoxId),1);
+
+}
+viewProductsClick(){
+   this.moveFilterMenuChanged.emit(!this.moveFilterMenu);
 
 }
 }

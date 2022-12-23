@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
@@ -8,6 +8,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class ShopComponent {
   @ViewChild('arrowFilterIcon') arrowFilterIcon:ElementRef;
   @ViewChild('filterIcon') filterIcon:ElementRef;
+  @Input('closeFilterMenu') closeFilterMenu:boolean
   moveFilterMenu:boolean=false;
   clicked:boolean=false;
   cardDisplayView:string='';
@@ -185,10 +186,16 @@ export class ShopComponent {
     handleFilterMenuDisplay(){
       this.filterIcon.nativeElement.classList.toggle('d-none');
       this.arrowFilterIcon.nativeElement.classList.toggle('d-none');
-      this.clicked=!this.clicked;
+      this.clicked=!this.moveFilterMenu;
       this.moveFilterMenu=!this.moveFilterMenu;
     }
+    moveFilterMenuChangedHandler(moveFilterMenu:boolean){
+            this.clicked=moveFilterMenu;
+            this.moveFilterMenu=moveFilterMenu;
+            this.filterIcon.nativeElement.classList.toggle('d-none');
+            this.arrowFilterIcon.nativeElement.classList.toggle('d-none');
 
+    }
 }
 
 
