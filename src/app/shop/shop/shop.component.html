@@ -7,7 +7,7 @@
               
             </div>
             <div>
-                <app-filter-component></app-filter-component>
+                <app-filter-component    [moveFilterMenu]="moveFilterMenu"></app-filter-component>
             </div>
         </div>
     </div>
@@ -43,4 +43,9 @@
         </div>
     </div>
   </div>
+</div>
+
+<div [ngClass]="['vh-100 position-fixed top-0 d-flex  d-md-none align-items-center w-100',clicked ? 'justify-content-start' : 'justify-content-end']">
+        <i class="fa-solid fa-filter text-white bg-dark p-3 translate-middle-y filterIcon" (click)="handleFilterMenuDisplay()" #filterIcon></i>
+        <i class="fa-solid fa-chevron-right text-white bg-dark p-3 translate-middle-y filterIcon  d-none" (click)="handleFilterMenuDisplay()" #arrowFilterIcon></i>
 </div>
