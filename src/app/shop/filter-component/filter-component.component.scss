@@ -4,6 +4,14 @@
     display: block;
 }
 .filter{
+    transition: transform 1s;
+    position: fixed;
+    top:0px;
+    transform: translateX(110%);
+    width: 90%;
+    min-height:100vh;
+    z-index:100000;
+    background-color: #fff;
     border:1px solid $borderColor;
     .dropdown-item{
         width: auto;
@@ -12,6 +20,9 @@
             width: fit-content;
         }
     }
+}
+.moveFilter{
+      transform: translateX(10%);  
 }
 .clearFilter{
     background-color: #E0E1E1;
@@ -29,4 +40,14 @@
 }
 .selectecColor{
         outline: 5px solid $borderColor;
+}
+
+@media screen and (min-width:768px) {
+    .filter{
+        position: static;
+        transform: translateX(0%);
+        width: auto;
+        min-height:auto;
+        background-color: #fff;
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import * as e from 'express';
 
 @Component({
@@ -7,8 +7,7 @@ import * as e from 'express';
   styleUrls: ['./filter-component.component.scss']
 })
 export class FilterComponentComponent {
-  // @ViewChild('minPriceSlider') minPriceSlider:ElementRef;
-  // @ViewChild('minPriceSlider') maxPriceSlider:ElementRef;
+  @Input('moveFilterMenu') moveFilterMenu:boolean;
   minPrice:number=0;
   maxPrice:number=1000;
   selected:Boolean=false;

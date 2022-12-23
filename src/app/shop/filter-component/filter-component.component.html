@@ -1,6 +1,8 @@
-<div class="filter p-3">
-    <h5 class="mb-4 pb-3">Filter By</h5>
-    <div *ngIf="filterSelection.length > 0" class="mb-3">
+<div [ngClass]="['filter p-3' , moveFilterMenu ? 'moveFilter':'']">
+    <h5 class="mb-4 pb-3 d-none d-md-block">Filter By</h5>
+    <div class="d-flex flex-column justify-content-between">
+        <div>
+         <div *ngIf="filterSelection.length > 0" class="mb-3">
         <h6 class="d-flex mb-0 align-items-center clearFilter p-2  justify-content-between" *ngIf="filterSelection[0] != '0$ - 1000$' || filterSelection.length > 1">
             <span class="fw-light small">Clear Filters</span>
             <span><i class="fa-solid textDark small fa-eraser" (click)="clearFilter()"></i></span>
@@ -137,4 +139,10 @@
                         <span class="ms-1 fs-xs text-muted">(20)</span>
                     </label>
       </div>
+        </div>
+        <div class="d-md-none text-center pt-5">
+            <button class="darkBtn px-4 py-2 fs-sm">View Products</button>
+        </div>
+    </div>
+
 </div>
