@@ -4,7 +4,6 @@
     display: block;
 }
 .filter{
-    // transition: transform 1s;
     position: fixed;
     top:0px;
     transform: translateX(110%);
@@ -27,9 +26,7 @@
 .clearFilter{
     background-color: #E0E1E1;
 }
-.borderBottom{
-    border-bottom: 1px solid $borderColor;
-}
+
 .colorPlate{
     display: inline-block;
     height: 30px;
