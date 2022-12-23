@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
@@ -6,6 +6,10 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
+  @ViewChild('arrowFilterIcon') arrowFilterIcon:ElementRef;
+  @ViewChild('filterIcon') filterIcon:ElementRef;
+  moveFilterMenu:boolean=false;
+  clicked:boolean=false;
   cardDisplayView:string='';
   paths=[{title:'Home',url:''},{title:''}];
   mainTitle='Home';
@@ -176,6 +180,13 @@ export class ShopComponent {
         return 1;
       }
       return 0;
+    }
+  
+    handleFilterMenuDisplay(){
+      this.filterIcon.nativeElement.classList.toggle('d-none');
+      this.arrowFilterIcon.nativeElement.classList.toggle('d-none');
+      this.clicked=!this.clicked;
+      this.moveFilterMenu=!this.moveFilterMenu;
     }
 
 }
