@@ -23,4 +23,42 @@
         left:0;
         top:7px
     }
+    .sizeParent .form-check-input[type=radio]{
+        width:40px;
+        height:40px;
+        border-radius: 0;
+        border:none;
+    }
+     .colorParent .form-check-input[type=radio]{
+        width:25px;
+        height:25px;
+        border:none;
+        outline: 2px solid $borderColor;
+        outline-offset: 2px;
+    }
+     .colorParent .form-check-input:checked[type=radio]{
+        background-image: url('../../../../assets/images/done.png');
+        box-shadow: none;
+    }
+    .sizeParent .form-check-input:checked[type=radio]{
+        background-image: none;
+        background-color: transparent;
+        border:3px solid #000;
+    }
+    .sizeParent label{
+        position:absolute;
+        top:12px;
+        left:12px;
+    }
+
+    .quantity i:hover{
+        color:$linkColor;
+    }
+    .px-6{
+        padding: 0 2.5rem;
+    }
+    .addTo p:hover{
+        color:$btnColor;
+        border-color: $btnColor;
+    }
 }
