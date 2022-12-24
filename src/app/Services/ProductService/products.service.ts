@@ -18,8 +18,11 @@ export class ProductsService {
        alt:'Side 1',
        title:'Teapot',
        productId:1,
+       stock:5,
        old:"$43.90",new:'$21.90',
-       categoryId:1,              
+       categoryId:1,      
+       rate:3,
+       noOfReviews:3,        
        desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
      {

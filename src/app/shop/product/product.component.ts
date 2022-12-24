@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../Services/ProductService/products.service';
 
@@ -11,6 +11,11 @@ export class ProductComponent {
   constructor(private __ActivatedRoute:ActivatedRoute,private __ProductsService:ProductsService){}
   paths=[{title:'Home',url:''}];
   product:any;
+  writeReview(){
+    const review:any=document.querySelector('.review');
+    review.classList.remove('d-none');
+    review.addEventListener('click',function(){ review.classList.add('d-none');})
+  }
   ngOnInit(): void {
     const productId=this.__ActivatedRoute.snapshot.params['id'];
     const product=this.__ProductsService.getProductById(productId);
