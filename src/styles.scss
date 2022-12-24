@@ -43,6 +43,9 @@ body{
 .textSite{
    color:$btnColor;
 }
+.bgSite{
+    background-color: $btnColor;
+}
 
 .dropdown-toggle::after {
             display: none !important;
@@ -80,9 +83,9 @@ body{
     font-weight: 400;
     color:#fff;
     &:hover{
-        background-color: transparent;
-        border-color: $linkColor;
-       color:$linkColor;
+        background-color: $btnColor;
+        border-color: $btnColor;
+       color:#fff;
     }
 }
 
