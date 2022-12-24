@@ -6,10 +6,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule } from '@angular/forms';
+import { AddtowishlistComponent } from './addtowishlist/addtowishlist.component';
+import { AddtocomparelistComponent } from './addtocomparelist/addtocomparelist.component';
 
 
 @NgModule({
-  declarations: [PageHeaderComponent,NavbarComponent,FooterComponent,ProductCardComponent],
+  declarations: [PageHeaderComponent,NavbarComponent,FooterComponent,ProductCardComponent, AddtowishlistComponent, AddtocomparelistComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,FormsModule
