@@ -13,6 +13,8 @@ import { NewProductsComponent } from './new-products/new-products.component';
 import { SideHeaderComponent } from './side-header/side-header.component';
 import { ProductImagesCarsouelComponent } from './product/product-images-carsouel/product-images-carsouel.component';
 import { ProductInfoComponent } from './product/product-info/product-info.component';
+import { ProductReviewComponent } from './product-review/product-review.component';
+import { SizeGuideComponent } from './size-guide/size-guide.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ProductInfoComponent } from './product/product-info/product-info.compon
     SideHeaderComponent,
     ProductImagesCarsouelComponent,
     ProductInfoComponent,
+    ProductReviewComponent,
+    SizeGuideComponent,
   ],
   imports: [
     CommonModule,
