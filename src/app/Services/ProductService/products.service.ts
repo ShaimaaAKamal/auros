@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-
+import { CategoriesService } from '../CategoriesService/categories.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor() { }
-  products=[
+  constructor(private __CategoriesService:CategoriesService) {
+     this.products.forEach(product => product['category']=this.__CategoriesService.getCategoryById(product.categoryId).name)
+   }
+  products:any[]=[
      {
        id: 1,
        src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
        srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
        srcSmall:"/assets/images/newProducts/teapot.jpg",
+       imagePath:"/assets/images/teapot/",
        alt:'Side 1',
        title:'Teapot',
        productId:1,
@@ -109,8 +112,13 @@ export class ProductsService {
 
      },
    ];
-
+   
    getNewProducts(){
     return this.products.filter(product => product.isNew)
    }
+
+    getProductById(id:string){
+    return this.products.find(product => product.id===parseInt(id));
+   }
+
 }
