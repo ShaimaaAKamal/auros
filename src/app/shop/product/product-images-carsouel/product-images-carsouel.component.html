@@ -1,0 +1,33 @@
+<div id="productCarsouel" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div [ngClass]="['carousel-item', index === 0  ? 'active' : '']" *ngFor="let image of productImages; let index=index">
+      <img [src]="imagePath+'MediumSlide' + image + '.jpg'" class="d-block w-100" alt="product Image">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#productCarsouel" data-bs-slide="prev">
+    <i class="fa-solid fa-chevron-left fa-2x textGray"></i>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#productCarsouel" data-bs-slide="next">
+    <i class="fa-solid fa-chevron-right fa-2x textGray"></i>
+    <span class="visually-hidden">Next</span>
+  </button>
+   <div class="carousel-indicators">
+    <button type="button" data-bs-target="#productCarsouel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+       <img [src]="imagePath+'smallSlide1.jpg'" alt="product Image" class="w-100"> 
+    </button>
+    <button type="button" data-bs-target="#productCarsouel" data-bs-slide-to="1" aria-label="Slide 2">
+               <img [src]="imagePath+'smallSlide2.jpg'" alt="product Image" class="w-100"> 
+    </button>
+    <button type="button" data-bs-target="#productCarsouel" data-bs-slide-to="2" aria-label="Slide 3">
+                       <img [src]="imagePath+'smallSlide3.jpg'" alt="product Image" class="w-100"> 
+    </button>
+    <button type="button" data-bs-target="#productCarsouel" data-bs-slide-to="3" aria-label="Slide 4">
+                       <img [src]="imagePath+'smallSlide4.jpg'" alt="product Image" class="w-100"> 
+    </button>
+    <button type="button" data-bs-target="#productCarsouel" data-bs-slide-to="4" aria-label="Slide 5">
+                       <img [src]="imagePath+'smallSlide5.jpg'" alt="product Image" class="w-100"> 
+    </button>
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+@import "../../../../styles.scss";
+
+.carousel-indicators{
+    position: static;
+    margin:0;
+}
+.carousel-indicators [data-bs-target]{
+    width:25%;
+    height: auto;
+    text-indent: unset;
+    opacity: 1;
+}
+.carousel-control-next,.carousel-control-prev{
+  bottom:18%;
+}

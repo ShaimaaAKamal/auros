@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FilterComponentComponent } from './filter-component/filter-component.component';
 import { NewProductsComponent } from './new-products/new-products.component';
 import { SideHeaderComponent } from './side-header/side-header.component';
+import { ProductImagesCarsouelComponent } from './product/product-images-carsouel/product-images-carsouel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SideHeaderComponent } from './side-header/side-header.component';
     FilterComponentComponent,
     NewProductsComponent,
     SideHeaderComponent,
+    ProductImagesCarsouelComponent,
   ],
   imports: [
     CommonModule,
