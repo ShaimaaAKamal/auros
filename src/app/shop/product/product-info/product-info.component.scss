@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+.productInfo{
+    .inStock{
+        border:2px solid #47AE74;
+        color:#47AE74;
+    }
+    .outOfStock{
+        border:2px solid red;
+    color:red;
+    }
+    .socials a:hover{
+        color:$btnColor;
+    }
+    .rate{
+        color:#FFD313;
+    }
+    .reviewBorder::before{
+        content:'';
+        width:2px;
+        height:15px;
+        background-color: $textGray;
+        position: absolute;
+        left:0;
+        top:7px
+    }
+}

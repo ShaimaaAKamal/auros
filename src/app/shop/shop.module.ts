@@ -12,6 +12,7 @@ import { FilterComponentComponent } from './filter-component/filter-component.co
 import { NewProductsComponent } from './new-products/new-products.component';
 import { SideHeaderComponent } from './side-header/side-header.component';
 import { ProductImagesCarsouelComponent } from './product/product-images-carsouel/product-images-carsouel.component';
+import { ProductInfoComponent } from './product/product-info/product-info.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProductImagesCarsouelComponent } from './product/product-images-carsoue
     NewProductsComponent,
     SideHeaderComponent,
     ProductImagesCarsouelComponent,
+    ProductInfoComponent,
   ],
   imports: [
     CommonModule,

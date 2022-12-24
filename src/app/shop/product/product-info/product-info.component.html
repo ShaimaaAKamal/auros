@@ -1,0 +1,26 @@
+<section class="productInfo">
+    <div>
+        <span *ngIf="product.stock > 0"  class='inStock me-4 fs-sm px-3 py-1 rounded-1'>In Stock</span>
+        <span *ngIf="product.stock <= 0"  class='outOfStock me-4 fs-sm px-3 py-1 rounded-1'>Out Of Stock</span>
+        <span class="small textGray fw-light">{{product.stock}} {{product.stock > 1 ? 'items' : 'item'}}</span>
+    </div> 
+    <h3 class=" fw-semibold pt-4 pb-2 mt-1 ls">{{product.title.toUpperCase()}}</h3>
+    <div class="socials">
+        <a href="https://www.facebook.com" class="pe-4 textGray"><i class="fa-brands fa-facebook-f fa-sm"></i></a>
+        <a href="https://www.twitter.com" class="pe-4 textGray"><i class="fa-brands fa-twitter fa-sm"></i></a>
+        <a href="https://www.google.com/" class="pe-4 textGray"><i class="fa-brands fa-google-plus-g fa-sm"></i></a>
+        <a href="https://www.pinterest.com/" class="pe-4 textGray"><i class="fa-brands fa-pinterest fa-sm"></i></a>
+    </div>
+    <div class="my-3 d-flex align-items-center">
+         <div class="pt-1">
+            <span *ngFor="let image of productImages">
+              <i *ngIf="image <= product.rate" class="fa-solid fa-star me-1 fa-xs rate"></i>
+              <i *ngIf="image > product.rate" class="fa-regular fa-star me-1 fa-xs rate"></i>
+            </span>
+         </div>
+         <div class="ms-2 ps-2 reviewBorder position-relative" >
+            <a class='productTitle fw-light fs-xs textGray text-decoration-none' href="#review">Read Reviews ({{product.noOfReviews}})</a>
+            <span class='productTitle fw-light fs-xs textGray ms-2' (click)="writeReview()">Write Review</span> 
+        </div>
+    </div>
+</section>
