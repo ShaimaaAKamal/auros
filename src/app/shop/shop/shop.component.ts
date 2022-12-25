@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Product } from 'src/app/Interfaces/product';
 import { ProductsService } from 'src/app/Services/ProductService/products.service';
+import { Path } from 'src/app/Interfaces/path';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -13,7 +14,7 @@ export class ShopComponent {
   moveFilterMenu:boolean=false;
   clicked:boolean=false;
   cardDisplayView:string='';
-  paths=[{title:'Home',url:''},{title:''}];
+  paths:Path[]=[{title:'Home',url:''},{title:''}];
   mainTitle='Home';
   products:Product[]=this.__ProductsService.getAllProducts();
   allProducts:Product[]=[...this.products];
@@ -44,7 +45,7 @@ export class ShopComponent {
 
   }
 
-  sortByName(a:any,b:any,key:string){
+  sortByName(a:Product,b:Product,key:string){
      let titleOne=a.title.toLowerCase();
      let titleTwo=b.title.toLowerCase();
      let returnValue=0;
@@ -56,7 +57,7 @@ export class ShopComponent {
       }
       return returnValue;
     }
-  sortByPrice(a:any,b:any,key:string){
+  sortByPrice(a:Product,b:Product,key:string){
      let priceOne=parseFloat(a.old.split('$')[1]);
      let priceTwo=parseFloat(b.old.split('$')[1]);
      let returnValue=0;
@@ -74,7 +75,7 @@ export class ShopComponent {
       return returnValue;
     }
 
-  sortByRevelance(a:any,b:any){
+  sortByRevelance(a:Product,b:Product){
      let categoryOne=a.categoryId;
      let categoryTwo=b.categoryId;
       if (categoryOne < categoryTwo) {
