@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as e from 'express';
-
+import { ProductsService } from 'src/app/Services/ProductService/products.service';
 @Component({
   selector: 'app-home-side-nav',
   templateUrl: './home-side-nav.component.html',
@@ -9,44 +8,8 @@ import * as e from 'express';
 export class HomeSideNavComponent implements OnInit {
 categories:boolean[]=[true,false,false,false,false]
  Data:any[]=[];
- ALLData=[
-     {
-       id: 1,
-       src:"../../../assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-       srcHover:"../../../assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-       alt:'Side 1',
-       title:'Teapot',
-       productId:1,
-       old:"$43.90",new:'$21.90'
-     },
-     {
-       id: 2,
-       src:"../../../assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-       srcHover:"../../../assets/images/trending/table/brown-bear-printed-sweater3.jpg",
-       alt:'Side 2',
-       title:'Miro Dinning Table',
-      productId:2,old:"$83.90",new:'$52.90',
-     },
-     {
-       id: 3,
-       src:"../../../assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-       srcHover:"../../../assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
-       alt:'Side 3',
-       title:'Janus Table Lamp',
-       productId:3,
-       old:"$73.90",new:'$41.90'
-     },
-     {
-       id: 4,
-       src:"../../../assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-       srcHover:"../../../assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-       alt:'Side 4',
-       title:'Discus Floor and Table',
-       productId:4,
-        old:"$199.90",new:'$150.90'
-     },
-   ]
-
+ALLData=this.__ProductsService.getAllProducts();
+  constructor(private __ProductsService:ProductsService){}
   getData(category:string){
      switch(category){
       case 'all': this.Data=this.ALLData; this.categories=this.categories.map((category,index)=> index === 0);break;
