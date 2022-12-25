@@ -55,8 +55,8 @@
                                                         <h6 class="pb-1 mb-1">
                                                             <a class="ps-0 productNav" [routerLinkActive]="(index+1 == product.id) ? 'active' :''" [routerLink]="'/shop/product/'+product.id">{{product.title}}</a>
                                                         </h6>
-                                                        <span class="text-muted text-decoration-line-through fw-light me-2 small">{{product.old}}</span>
-                                                        <span class="fw-light" >${{(parseInt((product.old).split('$')[1]))- (parseInt((product.old).split('$')[1])* (product.discount/100)) }}</span>
+                                                        <span [ngClass]="['small fw-light',product.discount && product.discount > 0 ?'text-muted text-decoration-line-through me-2':'textDark']">{{product.old}}</span>
+                                                        <span class="fw-light" *ngIf="product.discount">${{(parseInt((product.old).split('$')[1]))- (parseInt((product.old).split('$')[1])* (product.discount/100)) }}</span>
                                                     </div>
                                                 </div>
                                             </div>
