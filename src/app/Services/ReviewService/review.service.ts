@@ -19,11 +19,20 @@ export class ReviewService {
   ]
   constructor() { }
 
-  getReviewByProductID(id:string){
-    return this.reviews.filter((review:Review) => review.productId === parseInt(id));
+  getReviewByProductID(id:number){
+    return this.reviews.filter((review:Review) => review.productId === id);
   }
    getReviewByUserID(id:string){
     return this.reviews.filter((review:Review) => review.userId === parseInt(id));
+  }
+  getRateByProduct(id:number){
+     const reviews:Review[]=this.getReviewByProductID(id);
+     if(reviews.length <=0 ) return 0;
+     else{
+      let sum:number=0;
+      reviews.forEach(review => sum+=review.rate);
+      return Math.round(sum/reviews.length);
+     }
   }
   addNewReview(newReview:Review){
         this.reviews.push(newReview);
