@@ -1,3 +1,4 @@
+import { Manufacturers } from './manufacturers';
 export interface Product {
   id:number,
   title:string,
@@ -15,6 +16,7 @@ export interface Product {
   categoryId?:number,
   mainCategoryId?:number,
   src?:string,
+  ManufacturerId?:number,
   // srcHover?:string,
   // srcSmall?:string,
   noOfReviews:number,
