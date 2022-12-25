@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Path } from '../Interfaces/path';
 
 @Component({
   selector: 'app-contact',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  paths=[{title:'Home',url:''},{title:'Contact us'}]
+  paths:Path[]=[{title:'Home',url:''},{title:'Contact us'}]
 
 }
