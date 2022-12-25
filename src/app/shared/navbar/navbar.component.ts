@@ -25,9 +25,9 @@ loggedUser:boolean=true;
 parseInt=parseInt;
 shop:ShopInterface[]=this.__MainCategoryServiceService.getMainCategories();
 productTitles:string[]=['Product Name','Product Feature','Product Special']
-products:Product[]=[{id:1,src:'../../assets/images/ProductName/hummingbird-printed-t-shirt.jpg',title:'Teatop',old:"$43.90",discount:10,imagePath:'',stock:3,noOfReviews:3,rate:4},
-                    {id:2,src:'../../assets/images/ProductName/brown-bear-printed-sweater.jpg',title:'Miro Dinning Table',old:"$83.90",discount:20,imagePath:'',stock:4,noOfReviews:3,rate:4},
-                    {id:3,src:'../../assets/images/ProductName/the-best-is-yet-to-come-framed-poster.jpg',title:'Janus Table Lamp',old:"$73.90",discount:15,imagePath:'',stock:5,noOfReviews:3,rate:4}]
+products:Product[]=[{id:1,src:'../../assets/images/ProductName/hummingbird-printed-t-shirt.jpg',title:'Teatop',old:"$43.90",discount:10,imagePath:'',stock:3,noOfReviews:3,rate:4,categoryId:1},
+                    {id:2,src:'../../assets/images/ProductName/brown-bear-printed-sweater.jpg',title:'Miro Dinning Table',old:"$83.90",discount:20,imagePath:'',stock:4,noOfReviews:3,rate:4,categoryId:1},
+                    {id:3,src:'../../assets/images/ProductName/the-best-is-yet-to-come-framed-poster.jpg',title:'Janus Table Lamp',old:"$73.90",discount:15,imagePath:'',stock:5,noOfReviews:3,rate:4,categoryId:1}]
 user:User={id:1,name:'ahmed',email:'ahmed@gmail.com',phone:'01271084702',password:'Hossam303@',type:1}
           
 constructor(private __MainCategoryServiceService:MainCategoryServiceService){}
