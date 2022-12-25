@@ -20,8 +20,9 @@ constructor(private __MainCategoryServiceService:MainCategoryServiceService ) { 
   });
   return categories;
  }
- getCategoryById(id:string){
-    return this.categories.find(category => category.id===parseInt(id));
+ getCategoryById(id:number): Category|undefined{
+    // return this.categories.find(category => category.id===parseInt(id));
+        return this.categories.find(category => category.id=== id);
    }
   
 }
