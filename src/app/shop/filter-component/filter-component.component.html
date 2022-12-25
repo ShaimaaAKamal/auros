@@ -25,7 +25,7 @@
                  <ul class="dropdown-menu border-0" #productsMenu>
                         <div *ngFor="let mainCategory of mainCategories">
                              <li *ngFor="let category of mainCategory.categories">
-                                <div *ngIf="category['noOfProducts'] > 0" class="position-relative"> 
+                                <div *ngIf="category['noOfProducts'] !== undefined && category['noOfProducts'] > 0" class="position-relative"> 
                                     <a class="dropdown-item" title="category.name">
                                     <div class="form-check">
                                     <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" [name]="category.name.split(' ').join('_')" [value]="category.name.split(' ').join('_')" [id]="category.name.split(' ').join('_')">
@@ -35,7 +35,7 @@
                                     </label>
                                     </div>
                                 </a>
-                                 <div *ngIf="category.subCategories.length >0" class="">
+                                 <div *ngIf="category.subCategories !== undefined && category.subCategories.length >0" class="">
                                      <span class="textDark ms-1 pb-2 position-absolute top-0 end-0 pt-1" (click)="showSubCategories($event)">
                                         <i class="fa-solid fa-plus fs-sm"></i>
                                     </span>
@@ -79,7 +79,7 @@
                   </a>
                  <ul class="dropdown-menu border-0" #ManufacturersMenu>
                              <li *ngFor="let manufacturer of Manufacturers">
-                                <div *ngIf="manufacturer['noOfProducts'] > 0" class="position-relative"> 
+                                <div *ngIf="manufacturer['noOfProducts']!==undefined && manufacturer['noOfProducts'] > 0" class="position-relative"> 
                                     <a class="dropdown-item" title="category.name">
                                         <div class="form-check">
                                         <input class="form-check-input"  type="checkbox" (change)="handleCategorySelect($event)" [name]="manufacturer.name.split(' ').join('_')" [value]="manufacturer.name.split(' ').join('_')" [id]="manufacturer.name.split(' ').join('_')">

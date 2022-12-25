@@ -1,6 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/Interfaces/product';
 import { ProductsService } from 'src/app/Services/ProductService/products.service';
+import { ShopInterface } from 'src/app/Interfaces/shop-interface';
+import { SubCategory } from 'src/app/Interfaces/sub-category';
+import { Manufacturers } from 'src/app/Interfaces/manufacturers';
 @Component({
   selector: 'app-filter-component',
   templateUrl: './filter-component.component.html',
@@ -14,12 +17,12 @@ export class FilterComponentComponent {
   selected:Boolean=false;
   products:Product[]=this.__ProductsService.getAllProducts();
   filterSelection:string[]=[`${this.minPrice}$ - ${this.maxPrice}$`];
-  subCategories=[{name:'Metal',id:1,categoryId:1},{name:'Wooden',id:2,categoryId:1}]
-  mainCategories:any[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1},{name:'Dinning Chairs',id:2},{name:'Side Board',id:3},{name:'Cermaic Tiles',id:4},{name:'Seat',id:5}]},
-            {title:'Living Room',categories:[{name:'Sofas',id:6},{name:'TV Shelfs',id:7},{name:'Coffee Tables',id:8},{name:'Bed Sheet',id:9},{name:'Cusions',id:10}]},
-            {title:'Decoration',categories:[{name:'Lamps',id:11},{name:'Lighting',id:12},{name:'Furnitures',id:13},{name:'Speakers',id:14},{name:'Stools',id:15}]}
+  subCategories:SubCategory[]=[{name:'Metal',id:1,categoryId:1},{name:'Wooden',id:2,categoryId:1}]
+  mainCategories:ShopInterface[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1,mainCateogryId:1},{name:'Dinning Chairs',id:2,mainCateogryId:1},{name:'Side Board',id:3,mainCateogryId:1},{name:'Cermaic Tiles',id:4,mainCateogryId:1},{name:'Seat',id:5,mainCateogryId:1}]},
+            {title:'Living Room',categories:[{name:'Sofas',id:6,mainCateogryId:2},{name:'TV Shelfs',id:7,mainCateogryId:2},{name:'Coffee Tables',id:8,mainCateogryId:2},{name:'Bed Sheet',id:9,mainCateogryId:2},{name:'Cusions',id:10,mainCateogryId:2}]},
+            {title:'Decoration',categories:[{name:'Lamps',id:11,mainCateogryId:3},{name:'Lighting',id:12,mainCateogryId:3},{name:'Furnitures',id:13,mainCateogryId:3},{name:'Speakers',id:14,mainCateogryId:3},{name:'Stools',id:15,mainCateogryId:3}]}
            ];
-  Manufacturers:any[]=[{name:'Graphic Design',id:1,ManufactureId:1,noOfProducts:4},{name:'Web Design',id:2,ManufactureId:1,noOfProducts:3}];
+  Manufacturers:Manufacturers[]=[{name:'Graphic Design',id:1,noOfProducts:4},{name:'Web Design',id:2,noOfProducts:3}];
   sizes:any[]=[{name:'Xs',id:1,noOfProducts:4},{name:'M',id:2,noOfProducts:3},{name:'L',id:3,noOfProducts:2},{name:'XL',id:4,noOfProducts:4}];
   colors:any[]=[{name:'Red',value:"#f00"},{name:'Green',value:"#0f0"},{name:'Blue',value:"#00f"},{name:'White',value:"#fff"},{name:'Black',value:"#000"}];
 constructor(private __ProductsService:ProductsService){}
