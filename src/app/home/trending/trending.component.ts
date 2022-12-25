@@ -1,54 +1,14 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ProductsService } from 'src/app/Services/ProductService/products.service';
 @Component({
   selector: 'app-home-trending',
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.scss']
 })
 export class homeTrendingComponent {
-
-    Trending = [
-     {
-       id: 1,
-       src:"../../../assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-       srcHover:"../../../assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-       alt:'Side 1',
-       title:'Teapot',
-       productId:1,
-       discount:10,
-       new:'$21.90',
-       old:"$43.90",
-     },
-     {
-       id: 2,
-       src:"../../../assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-       srcHover:"../../../assets/images/trending/table/brown-bear-printed-sweater3.jpg",
-       alt:'Side 2',
-       discount:20,
-       title:'Miro Dinning Table',
-      productId:2,old:"$83.90",new:'$52.90',
-     },
-     {
-       id: 3,
-       src:"../../../assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-       srcHover:"../../../assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
-       alt:'Side 3',
-       title:'Janus Table Lamp',
-       discount:10,
-       productId:3,
-       old:"$73.90",new:'$41.90'
-     },
-     {
-       id: 4,
-       src:"../../../assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-       srcHover:"../../../assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-       alt:'Side 4',
-       title:'Discus Floor and Table',
-       productId:4,
-       discount:10,
-        old:"$199.90",new:'$150.90'
-     },
-   ]
+  constructor(private __ProductsService:ProductsService){}
+  Trending=this.__ProductsService.getTrendingProducts();
   customOptions: OwlOptions = {
     margin:16,
     loop: true,
