@@ -15,6 +15,7 @@ import { ProductImagesCarsouelComponent } from './product/product-images-carsoue
 import { ProductInfoComponent } from './product/product-info/product-info.component';
 import { ProductReviewComponent } from './product-review/product-review.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
+import { ProductSpexComponent } from './product/product-spex/product-spex.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     ProductInfoComponent,
     ProductReviewComponent,
     SizeGuideComponent,
+    ProductSpexComponent,
   ],
   imports: [
     CommonModule,

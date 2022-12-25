@@ -1,7 +1,7 @@
 <app-page-header [paths]="paths"></app-page-header>
 <div class="parent">
     <div class="container-fluid my-5">
-        <div class="row gx-5">
+        <div class="row gx-5 gy-4">
              <div class="col-md-6">
                 <div>
                     <app-product-images-carsouel [imagePath]="product.imagePath"></app-product-images-carsouel>
@@ -14,6 +14,7 @@
              </div>
         </div>
     </div>
+    <app-product-spex [product]="product"></app-product-spex>
 </div>
 <div class="review vh-100 d-flex justify-content-center align-items-center d-none position-fixed top-0 start-0 w-100" #review>
     <div class="bg-white p-4">
