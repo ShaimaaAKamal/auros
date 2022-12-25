@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import { CategoriesService } from '../CategoriesService/categories.service';
 import { Product } from 'src/app/Interfaces/product';
+import { ReviewService } from '../ReviewService/review.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-
-  constructor(private __CategoriesService:CategoriesService) {
-     this.products.forEach((product:Product) => product['category']=this.__CategoriesService.getCategoryById(product.categoryId)?.name)
-   }
-  products:Product[]=[
+       products:Product[]=[];
+       staticProducts:Product[]=[
      {
        id: 1,
-       src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-      //  srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-      //  srcSmall:"/assets/images/newProducts/teapot.jpg",
        imagePath:"/assets/images/teapot/",
        title:'Teapot',
        isTrend:true,
@@ -24,127 +19,123 @@ export class ProductsService {
        old:"$43.90",
        reference:'demo_1',
        categoryId:1,      
-       rate:3,
-       noOfReviews:1,
+       rate:0,
+       noOfReviews:0,
        discount:10,        
        desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
      { rate:0,
        noOfReviews:0,
        id: 2,
-              isTrend:true,
-       imagePath:"/assets/images/teapot/",
-       src:"/assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-      //  srcHover:"/assets/images/trending/table/brown-bear-printed-sweater3.jpg",
+       imagePath:"/assets/images/table/",
+       isTrend:true,
        title:'Miro Dinning Table',
         old:"$83.90",
-             categoryId:2,
-              stock:5, 
-                   desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-    
+       categoryId:2,
+       stock:5, 
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
-     { rate:2,
+     { rate:0,
        id: 3,
-              noOfReviews:0,
-
-              isTrend:true,
-       imagePath:"/assets/images/teapot/",
-
-       src:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-      //  srcHover:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
+       noOfReviews:0,
+       isTrend:true,
+       imagePath:"/assets/images/Discus/",
        title:'Janus Table Lamp',
        old:"$73.90",
-              categoryId:3,
-               stock:5, 
+       categoryId:3,
+       stock:5, 
       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
      },
      {rate:0,
-              noOfReviews:0,
-
+       noOfReviews:0,
        id: 4,
-              isTrend:true,
-       imagePath:"/assets/images/teapot/",
-
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-       ,src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-      //  srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-     
+       isTrend:true,
+       imagePath:"/assets/images/TableLamp/",
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
+       ,
        title:'discus Floor and Table',
        old:"$199.90",
        stock:0,
        categoryId:4,
      },
-      {
-               imagePath:"/assets/images/teapot/",
-                      noOfReviews:0,
-
-       rate:1,
-       id: 5,
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
-       src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-      //  srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-       // srcSmall:"/assets/images/newProducts/teapot.jpg",
-              isTrend:true,
-
-     
-       title:'Teapot',
-   
+     {
+        imagePath:"/assets/images/chairs/",
+        noOfReviews:0,
+       rate:0,
+       id: 9,
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
+       isTrend:true,
+       title:'American Chair',
        isNew:true,
-       old:"$43.90",discount:50,
-              stock:0,
-                     categoryId:1,
+       old:"$55.90",discount:0,
+       stock:3,
+       categoryId:1,
 
      },
+      {
+       imagePath:"/assets/images/teapot/",
+       noOfReviews:0,
+       rate:0,
+       id: 5,
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
+       isTrend:true,
+       title:'Teapot',
+       isNew:true,
+       old:"$43.90",
+       discount:50,
+       stock:0,
+       categoryId:1,
+     },
      {
-             imagePath:"/assets/images/teapot/",
-                    noOfReviews:0,
-
-       rate:2,
-      stock:4,
+       imagePath:"/assets/images/table/",
+       noOfReviews:0,
+       rate:0,
+       stock:4,
        id: 6,
-       src:"/assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-      //  srcHover:"/assets/images/trending/table/brown-bear-printed-sweater3.jpg",
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        isNew:false,
        title:'Miro Dinning Table',
-       old:"$83.90",discount:20,
-             categoryId:2,
-              
-
+       old:"$83.90",
+       discount:20,
+       categoryId:2,       
      },
      {
-             imagePath:"/assets/images/teapot/",
-                    noOfReviews:0,
-
-             rate:3,
+       imagePath:"/assets/images/TableLamp/",
+       noOfReviews:0,
+       rate:0,
        id: 7,
-       src:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-      //  srcHover:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
-      //   srcSmall:"/assets/images/newProducts/teapot.jpg",
        isNew:true,
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
+       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        title:'Janus Table Lamp',
        old:"$73.90",
-                     stock:3,
-                            categoryId:3,
+       stock:3,
+       categoryId:3,
 
      },
      {
-             imagePath:"/assets/images/teapot/",
-                    noOfReviews:0,
-
-             rate:5,
+       imagePath:"/assets/images/Discus/",
+       noOfReviews:0,
+       rate:0,
        id: 8,
-       src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-      //  srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
        title:'discus Floor and Table',
-       old:"$199.90",discount:40,
-                     stock:5,       categoryId:4,
+       old:"$199.90",
+       discount:40,              
+       stock:5,
+       categoryId:4,
 
      },
-   ];
-   
+        ];
+  constructor(private __CategoriesService:CategoriesService,private __ReviewService:ReviewService) {
+       const prod=localStorage.getItem('products');
+       this.products=prod ? JSON.parse(prod) : this.staticProducts;
+       this.products.forEach((product:Product) => { 
+       product['category']=this.__CategoriesService.getCategoryById(product.categoryId)?.name;
+       product['noOfReviews']=this.__ReviewService.getReviewByProductID(product.id).length;
+       product['rate']=this.__ReviewService.getRateByProduct(product.id);
+                     });
+       localStorage.setItem('products',JSON.stringify(this.products));
+              }
    getNewProducts(){
     return this.products.filter(product => product.isNew)
    }
