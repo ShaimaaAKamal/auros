@@ -4,5 +4,6 @@ export interface Category {
     id:number,
     noOfProducts?:number,
     subCategories?:SubCategory[],
+    noOfSubCategories?:number,
     mainCateogryId:number,
 }

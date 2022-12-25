@@ -10,11 +10,11 @@
                </a>
                </label>
             </div>
-            <span class="textDark ms-1" *ngIf="category['noOfSubCategories'] > 0" (click)="showSubCategories($event)">
+            <span class="textDark ms-1" *ngIf="category['noOfSubCategories'] && category['noOfSubCategories'] > 0" (click)="showSubCategories($event)">
                      <i class="fa-solid fa-plus textGray fs-sm position-relative"></i>
             </span>
         </div>
-        <div class="ps-3 d-none" *ngIf="category['noOfSubCategories'] > 0" >
+        <div class="ps-3 d-none" *ngIf="category['noOfSubCategories'] && category['noOfSubCategories'] > 0" >
            <div    *ngFor="let subcategory of subCategories">
                <div class="form-check fs-sm  mb-1 categoryOption" *ngIf="subcategory.categoryId === category.id">
                   <input class="form-check-input mt-2" type="radio" name="subcategory" [id]="subcategory.name.split(' ').join('_')">
