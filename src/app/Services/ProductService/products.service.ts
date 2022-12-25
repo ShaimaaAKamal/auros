@@ -6,7 +6,7 @@ import { CategoriesService } from '../CategoriesService/categories.service';
 export class ProductsService {
 
   constructor(private __CategoriesService:CategoriesService) {
-     this.products.forEach(product => product['category']=this.__CategoriesService.getCategoryById(product.categoryId).name)
+     this.products.forEach(product => product['category']=this.__CategoriesService.getCategoryById(product.categoryId)?.name)
    }
   products:any[]=[
      {
