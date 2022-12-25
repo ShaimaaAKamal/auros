@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import * as e from 'express';
-
+import { Product } from 'src/app/Interfaces/product';
+import { ProductsService } from 'src/app/Services/ProductService/products.service';
 @Component({
   selector: 'app-filter-component',
   templateUrl: './filter-component.component.html',
@@ -12,112 +12,7 @@ export class FilterComponentComponent {
   minPrice:number=0;
   maxPrice:number=1000;
   selected:Boolean=false;
-
-  products=[
-     {
-       id: 1,
-       src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-       srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-       alt:'Side 1',
-       title:'Teapot',
-       productId:1,
-       old:"$43.90",new:'$21.90',
-       categoryId:1,
-       subCategoryId:1,              
-       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-     },
-     {
-       id: 2,
-       src:"/assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-       srcHover:"/assets/images/trending/table/brown-bear-printed-sweater3.jpg",
-       alt:'Side 2',
-       subCategoryId:6,              
-       title:'Miro Dinning Table',
-      productId:2,old:"$83.90",new:'$52.90',
-             categoryId:2,
-                   desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-
-     },
-     {
-       id: 3,
-       src:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-       srcHover:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
-       alt:'Side 3',
-       title:'Janus Table Lamp',
-       productId:3,
-       subCategoryId:6,              
-       old:"$73.90",new:'$41.90',
-              categoryId:3,
-      desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-     },
-     {
-       id: 4,
-       desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!'
-       ,src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-       srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-       alt:'Side 4',
-       subCategoryId:2,              
-       title:'discus Floor and Table',
-       productId:4,
-       old:"$199.90",new:'$150.90',
-       stock:0,
-       categoryId:4,
-     },
-      {
-       id: 5,
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
-       src:"/assets/images/trending/teapot/hummingbird-printed-t-shirt.jpg",
-       srcHover:"/assets/images/trending/teapot/hummingbird-printed-t-shirt3.jpg",
-       alt:'Side 1',
-              subCategoryId:3,              
-       title:'Teapot',
-       productId:1,
-       isNew:true,
-       old:"$43.90",discount:50,
-              stock:0,
-                     categoryId:1,
-
-     },
-     {
-      stock:4,
-       id: 6,
-       src:"/assets/images/trending/table/brown-bear-printed-sweater2.jpg",
-       srcHover:"/assets/images/trending/table/brown-bear-printed-sweater3.jpg",
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
-       alt:'Side 2',
-       isNew:false,
-       title:'Miro Dinning Table',
-      productId:2,old:"$83.90",discount:20,
-             categoryId:2,
-
-     },
-     {
-       id: 7,
-       src:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster2.jpg",
-       srcHover:"/assets/images/trending/TableLamp/the-best-is-yet-to-come-framed-poster.jpg",
-       alt:'Side 3',
-       isNew:true,
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
-       title:'Janus Table Lamp',
-       productId:3,
-       old:"$73.90",new:'$41.90',
-                     stock:3,
-                            categoryId:3,
-
-     },
-     {
-       id: 8,
-       src:"/assets/images/trending/Discus/the-adventure-begins-framed-poster.jpg",
-       srcHover:"/assets/images/trending/Discus/the-adventure-begins-framed-poster2.jpg",
-       alt:'Side 4',
-             desc:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sequi culpa assumenda, eligendi nisi consectetur quis similique inventore. Delectus voluptates non quis, sit minima totam laboriosam autem commodi minus harum!',
-       title:'discus Floor and Table',
-       productId:4,
-       old:"$199.90",discount:40,
-                     stock:5,       categoryId:4,
-
-     },
-   ];
+  products:Product[]=this.__ProductsService.getAllProducts();
   filterSelection:string[]=[`${this.minPrice}$ - ${this.maxPrice}$`];
   subCategories=[{name:'Metal',id:1,categoryId:1},{name:'Wooden',id:2,categoryId:1}]
   mainCategories:any[]=[{title:'Kitchen',categories:[{name:'Dinner Table' ,id:1},{name:'Dinning Chairs',id:2},{name:'Side Board',id:3},{name:'Cermaic Tiles',id:4},{name:'Seat',id:5}]},
@@ -127,6 +22,7 @@ export class FilterComponentComponent {
   Manufacturers:any[]=[{name:'Graphic Design',id:1,ManufactureId:1,noOfProducts:4},{name:'Web Design',id:2,ManufactureId:1,noOfProducts:3}];
   sizes:any[]=[{name:'Xs',id:1,noOfProducts:4},{name:'M',id:2,noOfProducts:3},{name:'L',id:3,noOfProducts:2},{name:'XL',id:4,noOfProducts:4}];
   colors:any[]=[{name:'Red',value:"#f00"},{name:'Green',value:"#0f0"},{name:'Blue',value:"#00f"},{name:'White',value:"#fff"},{name:'Black',value:"#000"}];
+constructor(private __ProductsService:ProductsService){}
 handleOpenClick(event:any,menuElement:HTMLElement){
   menuElement.classList.toggle('static');
   menuElement.previousElementSibling?.children[1].classList.toggle('d-none');

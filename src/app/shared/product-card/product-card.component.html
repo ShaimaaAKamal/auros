@@ -1,7 +1,9 @@
  <div [ngClass]="['d-flex',cardDisplayView ? 'flex-row ' : 'flex-column']">
                      <div class="position-relative carsouelCard ">
                         <div>
-                            <img [src]="product.src" [alt]="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' ">
+                            <!-- <img [src]="product.src" [alt]="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' "> -->
+                            <img [src]="product.imagePath+'MediumSlide1.jpg'" [alt]="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' ">
+
                         </div>
                         <div class="d-flex justify-content-between p-3 top-0 start-0 position-absolute w-100 trendHead">
                             <span *ngIf="product.isNew" class="fs-xs textSite position-absolute  trendNew">New</span>
@@ -10,7 +12,8 @@
                         <div class="position-absolute w-100 h-100  top-0 start-0  d-none carsouelInfo">
                             <div>
                                 <div>
-                                    <img [src]="product.srcHover" alt="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' ">
+                                    <!-- <img [src]="product.srcHover" alt="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' "> -->
+                                    <img [src]="product.imagePath+'MediumSlide2.jpg'" alt="product.alt" [title]="product.title" [ngClass]="imageWidth ? imageWidth : '' ">
                                 </div>
                                 <div class="position-absolute w-100 bottom-0 hoverInfo pb-3">
                                     <div [ngClass]="['d-flex justify-content-center align-items-center', !cardDisplayView?'':'socialsList']">
@@ -40,7 +43,7 @@
                         </h6>
                          <p [ngClass]="['d-flex align-items-center', !cardDisplayView?'justify-content-center pb-3 small':  'justify-content-start']">
                             <span  [ngClass]=" ['pt-1',product.discount?'textGray text-decoration-line-through fs-sm ':'text-dark ' ,'me-2 fw-light']">{{product.old}}</span>
-                            <span *ngIf="product.discount" class="pt-1 text-dark ">${{(product.old).split('$')[1]*product.discount/100}}</span>
+                            <span *ngIf="product.discount" class="pt-1 text-dark ">${{((product.old).split('$')[1]) - ((product.old).split('$')[1]*product.discount/100)}}</span>
                         </p>
                         <p *ngIf="cardDisplayView" [ngClass]="cardDisplayView ? 'textGray text-start fs-sm' : ''">{{product.desc}}</p>
                      </div>

@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../Services/ProductService/products.service';
-
+import { Product } from 'src/app/Interfaces/product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -10,7 +10,7 @@ import { ProductsService } from '../../Services/ProductService/products.service'
 export class ProductComponent {
   constructor(private __ActivatedRoute:ActivatedRoute,private __ProductsService:ProductsService){}
   paths=[{title:'Home',url:''}];
-  product:any;
+  product:Product;
   writeReview(){
     const review:any=document.querySelector('.review');
     review.classList.remove('d-none');

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ProductsService } from 'src/app/Services/ProductService/products.service';
+import { Product } from 'src/app/Interfaces/product';
 @Component({
   selector: 'app-home-trending',
   templateUrl: './trending.component.html',
@@ -8,7 +9,7 @@ import { ProductsService } from 'src/app/Services/ProductService/products.servic
 })
 export class homeTrendingComponent {
   constructor(private __ProductsService:ProductsService){}
-  Trending=this.__ProductsService.getTrendingProducts();
+  Trending:Product[]=this.__ProductsService.getTrendingProducts();
   customOptions: OwlOptions = {
     margin:16,
     loop: true,

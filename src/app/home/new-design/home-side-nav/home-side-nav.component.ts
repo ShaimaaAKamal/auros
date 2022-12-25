@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/Services/ProductService/products.service';
+import { Product } from 'src/app/Interfaces/product';
 @Component({
   selector: 'app-home-side-nav',
   templateUrl: './home-side-nav.component.html',
@@ -7,8 +8,8 @@ import { ProductsService } from 'src/app/Services/ProductService/products.servic
 })
 export class HomeSideNavComponent implements OnInit {
 categories:boolean[]=[true,false,false,false,false]
- Data:any[]=[];
-ALLData=this.__ProductsService.getAllProducts();
+ Data:Product[]=[];
+ALLData:Product[]=this.__ProductsService.getAllProducts();
   constructor(private __ProductsService:ProductsService){}
   getData(category:string){
      switch(category){
