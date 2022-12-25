@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Product } from 'src/app/Interfaces/product';
 
 @Component({
   selector: 'app-sidenav-items',
@@ -7,8 +8,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./sidenav-items.component.scss']
 })
 export class SidenavItemsComponent {
-@Input('Data') Data:any;
-@ViewChild('doubleElements') doubleElements:any;
+@Input('Data') Data:Product[];
 customOptions: OwlOptions = {
     margin:16,
     loop: true,
@@ -28,5 +28,4 @@ customOptions: OwlOptions = {
       },
     },
   }
-
 }
