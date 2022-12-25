@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from '../../Interfaces/product';
 
 @Component({
   selector: 'app-product-card',
@@ -6,9 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
-  @Input('product') product:any;
+  @Input('product') product:Product;
   @Input ('imageWidth') imageWidth:string='';
   @Input ('cardDisplayView') cardDisplayView:string='';
+  parseFloat=parseFloat;
    addToCart(){
   }
   addToWishlist(event:any,id:number){
