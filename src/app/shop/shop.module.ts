@@ -16,6 +16,9 @@ import { ProductInfoComponent } from './product/product-info/product-info.compon
 import { ProductReviewComponent } from './product-review/product-review.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
 import { ProductSpexComponent } from './product/product-spex/product-spex.component';
+import { ProductDescriptionComponent } from './product/product-description/product-description.component';
+import { AlsoLikeProductsComponent } from './product/also-like-products/also-like-products.component';
+import { RelatedProductsComponent } from './product/related-products/related-products.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { ProductSpexComponent } from './product/product-spex/product-spex.compon
     ProductReviewComponent,
     SizeGuideComponent,
     ProductSpexComponent,
+    ProductDescriptionComponent,
+    AlsoLikeProductsComponent,
+    RelatedProductsComponent,
   ],
   imports: [
     CommonModule,
