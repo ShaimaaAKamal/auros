@@ -1,9 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { AuthService } from './../../Services/AuthService/auth.service';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Path } from 'src/app/Interfaces/path';
-import { User } from 'src/app/Interfaces/user';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -28,23 +26,11 @@ export class RegisterComponent {
     policyAgree: new FormControl(null,[Validators.required]),
   });
 
- constructor(private __Router:Router){}
+ constructor(private __AuthService:AuthService){}
 submitRegisterForm(){
-    const localStorageUsers=localStorage.getItem('users');
-    const users:any[]=(localStorageUsers)?JSON.parse(localStorageUsers):[];
-    if(this.registerForm.invalid) this.displayError=true;
-    else{
-      const userData=this.registerForm.value;
-      const existedUser=users.find((user:User )=> user.email === userData.email);
-      if(!existedUser){
-          users.push({id:Date.now(),type:1,...userData});
-          localStorage.setItem('users',JSON.stringify(users));
-          this.__Router.navigate(['/auth/login']);
-      }
-      else{
-        this.existedUser=true;
-      }
-    }
+  const registerResult=this.__AuthService.handleRegister(this.registerForm,this.displayError,this.existedUser)
+     this.displayError=registerResult.displayError;
+     this.existedUser=registerResult.existedUser;
   }
  showPassword(){
   this.passwordType='text';
