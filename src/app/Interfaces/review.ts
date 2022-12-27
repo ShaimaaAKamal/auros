@@ -5,5 +5,7 @@ export interface Review {
     Message:string,
     productId:number,
     userId:number,
-    date:Date
+    date:string,
+    useful:number,
+    unuseful:number,
 }
