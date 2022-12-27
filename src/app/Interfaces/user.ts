@@ -1,10 +1,16 @@
 export interface User {
     id:number,
-    name:string,
+    fname:string,
+    lname:string,
     type:number,
     noOfReviews?:number,
     noOfOrders?:number,
     email:string,
     password:string,
-    phone:string
+    birthdate:string,
+    gender:string,
+    phone?:string,
+    recevieOffers?:boolean|null,
+    newLetters?:boolean|null,
+    policyAgree?:boolean|null
 }
