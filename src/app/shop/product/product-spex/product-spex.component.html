@@ -1,19 +1,23 @@
 <section class="productSpex my-5 px-2 px-md-0">
-    <div class="d-flex align-items-start flex-column flex-md-row">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="d-flex align-items-start flex-column flex-lg-row">
+        <div class="nav flex-column flex-md-row  justify-content-md-center justify-content-lg-start flex-lg-column nav-pills me-3 align-self-lg-stretch" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <button class="nav-link active text-uppercase" id="v-pills-Description-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Description" type="button" role="tab" aria-controls="v-pills-Description" aria-selected="true">Description</button>
             <button class="nav-link text-uppercase" id="v-pills-productDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productDetails" type="button" role="tab" aria-controls="v-pills-productDetails" aria-selected="false">Product Details</button>
             <button class="nav-link text-uppercase" id="v-pills-review-tab" data-bs-toggle="pill" data-bs-target="#v-pills-review" type="button" role="tab" aria-controls="v-pills-review" aria-selected="false">reviews</button>
         </div>
         <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-Description" role="tabpanel" aria-labelledby="v-pills-Description-tab" tabindex="0">...</div>
+            <div class="tab-pane fade show active" id="v-pills-Description" role="tabpanel" aria-labelledby="v-pills-Description-tab" tabindex="0">
+                <app-product-description [product]="product"></app-product-description>
+            </div>
             <div class="tab-pane fade p-4 px-5" id="v-pills-productDetails" role="tabpanel" aria-labelledby="v-pills-productDetails-tab" tabindex="0">
-                  <div class="mb-3 mt-4 border">
-                    <img [src]="product.imagePath + '1.jpg'" alt="reference image" class="w-100">
+                  <div class="mb-3 mt-4 d-flex">
+                        <div class="border">
+                            <img [src]="product.imagePath + '1.jpg'" alt="reference image" class="w-100">
+                        </div>
                   </div>
                   <div class="fw-light small  mb-2"><span class="textDark me-2">Reference</span><span class="text-muted">{{product.reference}}</span></div>
                   <div class="fw-light small  mb-2"><span class="textDark me-2">In Stock</span><span class="text-muted">{{product.stock}} {{product.stock > 1 ? 'Items' : 'Item'}}</span></div>
-                </div>
+            </div>
             <div class="tab-pane fade p-4 px-5" id="v-pills-review" role="tabpanel" aria-labelledby="v-pills-review-tab" tabindex="0">
                     <div *ngIf="product.noOfReviews == 0">
                         <p class="fs-sm textDark fw-light productTitle" (click)="writeReview()">
@@ -21,13 +25,14 @@
                             <span>Be the first to write your review!</span>
                         </p>
                     </div>
-                    <div class='d-flex' *ngIf="product.noOfReviews > 0">
-                         <div class="d-flex flex-column">
-                            <span class="textGray fs-sm">Grade</span>
-                         </div>
-                         <div>
-
-                         </div>
+                    <div class='d-flex flex-column' *ngIf="product.noOfReviews > 0">
+                            <div class="py-4 borderBottom" *ngFor="let review of productReviews">
+                                <app-product-review [productReviews]="productReviews" [review]="review"></app-product-review>
+                            </div>
+                            <p class="fs-sm mt-3 textDark fw-light productTitle" (click)="writeReview()">
+                                    <i class="fa-solid fa-pen me-2"></i>
+                                    <span>Write a Review</span>
+                            </p>
                     </div>
             </div>
         </div>

@@ -21,13 +21,17 @@
     .nav-pills {
                 width: 100%;
             }
+   
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width:992px){
     .productSpex{
         border:1px solid $borderColor;
     .nav-link{
         text-align: start;
+        border:1px solid $borderColor;
+        border-right:none;
+        border-left:none;
         padding-left: 2rem;
         padding-top:.8rem;
         padding-bottom: .8rem;
@@ -37,23 +41,31 @@
         &:last-child{
             border-bottom: 1px solid $borderColor;
         }
-        &:nth-child(odd){
-            border-right:1px solid $borderColor;
-        }
         &:nth-child(even){
-             border:1px solid $borderColor;
+             border-top:none;
+             border-bottom:none;    
         }
         &.active{
            background-color: transparent;
+           position: relative;
+           z-index:10;
            color:$btnColor;
-           border-bottom: none;
-           border-right: none;
+           border-bottom: 1px solid $borderColor;
+           right:-1px;
+           border-right: 1px solid #fff;
            border-left:3px solid $btnColor;
+            &:nth-child(even){
+                border-bottom: none;
+            }
         }
     }
     .nav-pills {
                 width: 30%;
+                 border-right: 1px solid $borderColor;
             }
+    .tab-content{
+                width: 70%;
+    }
 }
     
 }
@@ -62,6 +74,9 @@
     .nav-pills {
                 width: 20%;
             }
+    .tab-content{
+                width: 80%;
+    }
 }
     
 }
