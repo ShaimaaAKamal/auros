@@ -1,0 +1,53 @@
+@import "../../../styles.scss";
+.registerForm{
+    width:95%;
+    margin-left:auto;
+    margin-right: auto;
+    .password{
+        width:94%;
+    }
+    .passwordIcon{
+        color:#ccc;
+        &:hover{
+            color:#212121;
+        }
+    }
+    .fs-xxs{
+        font-size: .8rem;
+        color:#242424;
+        font-weight: 300;
+        &:hover{
+            color:$btnColor;
+        }
+    }
+    .form-control{
+        font-weight: 300;
+        &:focus{
+            box-shadow: none;
+            border-color:#53D1F8;
+        }
+    }
+    
+    .form-check-input{
+        &:focus{
+            box-shadow: none;
+        }
+         &:checked{
+            background-color: $btnColor;
+            border:$btnColor;
+        }   
+    }
+}
+
+@media screen and (min-width:768px) {
+    .registerForm{
+    width:75%;
+}   
+}
+
+
+@media screen and (min-width:992px) {
+    .registerForm{
+    width:50%;
+}   
+}
