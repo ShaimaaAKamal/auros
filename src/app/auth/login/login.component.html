@@ -1,1 +1,48 @@
-<p>login works!</p>
+<app-page-header [paths]="paths"></app-page-header>
+<div class="parent">
+    <div class="my-5 LoginForm">
+       <h2 class=" text-center fw-semibold">Log in to your account</h2>
+       <div>
+        <div class="mb-3">
+            <label for="email" class="form-label fs-sm text-muted fw-light">Email</label>
+            <input type="email" class="form-control rounded-0" id="email" name="email">
+        </div>
+        <div class="mb-3 d-flex align-items-center">
+           <div class="password">
+                <label for="password" class="form-label  fs-sm text-muted fw-light">Password</label>
+                <input type="password" class="form-control rounded-0" id="password" name="password">
+           </div>
+           <div class="mt-4 pt-2 ms-3">
+           <i *ngIf="!visible" class="fa-solid fa-eye-slash passwordIcon" (click)="showPassword()"></i>
+           <i *ngIf="visible" class="fa-solid fa-eye passwordIcon" (click)="hidePassword()"></i>
+           </div>
+        </div>
+        <p class="text-center fs-xxs">
+             <a class="text-decoration-none text-reset" routerLink="/auth/forgetPassword">Forget Your Password?</a>
+        </p>
+        <div>
+            <button class="w-100 darkBtn fw-light py-2">Sign In</button>
+        </div>
+       </div>
+    </div>
+    <div class="socialConnect my-5 LoginForm">
+        <h6 class="mb-4">Connect with Social Networks</h6>
+        <div class="mb-2">
+            <a class="fw-light me-2 text-uppercase fs-sm  p-2 px-3  text-white d-inline-block facebookBtn text-decoration-none" href="https://www.facebook.com">
+                <i class="fa-brands fa-facebook-f me-3"></i>
+                <span>Sign in With facebook</span>
+            </a>
+              <a class="fw-light text-uppercase fs-sm  p-2 px-3  text-white d-inline-block googleBtn text-decoration-none" href="https://www.google.com">
+               <i class="fa-brands fa-google me-3"></i>
+                <span>Sign in With Google</span>
+            </a>
+        </div>
+        <a class="fw-light me-2 text-uppercase fs-sm  p-2 px-3  text-white d-inline-block twitterBtn text-decoration-none" href="https://www.twitter.com">
+            <i class="fa-brands fa-twitter me-3"></i>    
+            <span>Sign in With twitter</span>
+        </a>
+        <p class="text-center mt-3 fs-xxs">
+            <a class="text-decoration-none text-reset" routerLink="/auth/register">No Account? Create One Now</a>
+        </p>
+    </div>
+</div>
