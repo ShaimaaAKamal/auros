@@ -9,6 +9,11 @@ export interface Product {
   sizes?:string[],
   discount?:number,
   stock:number,
+  PAPERTYPE?:string[],
+  minDesc?:string,
+  packContains?:any,
+  DIMENSION?:string[],
+  DataSheet?:boolean,
   imagePath:string,
   images?:string[],
   desc?:string,
@@ -21,4 +26,6 @@ export interface Product {
   noOfReviews:number,
   rate:number,
   old:string,
+  descList?:string[];
+  additionalDesc?:string
 }
