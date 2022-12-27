@@ -5,15 +5,7 @@
         <br/>
         floor and table lights.
     </p>
-    <div class="py-4">
-        <owl-carousel-o  [options]="customOptions">
-        <ng-container  *ngFor="let slide of Trending">
-            <ng-template carouselSlide [id]="(slide.id).toString()">
-               <app-product-card [product]="slide"></app-product-card>
-            </ng-template>
-        </ng-container>
-    </owl-carousel-o>
-    </div>
+    <app-carsouel-component [products]="Trending" [customOptions]="customOptions"></app-carsouel-component>
     <div class="text-center">
        <a routerLink="/shop/trending" class="more text-decoration-none text-dark fw-semibold h5">+ See More Products</a>
     </div>
