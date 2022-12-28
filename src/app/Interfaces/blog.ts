@@ -4,5 +4,9 @@ export interface Blog {
     image:string,
     description:string,
     category:string,
-    date:string
+    date:string,
+    noOfLikes:number,
+    author:string,
+    noOfComments:number,
+    authorId?:number,
 }
