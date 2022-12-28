@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { FaqComponent } from './faq/faq.component';
@@ -24,7 +23,6 @@ import { HomeBlogCardComponent } from './home/home-blog-section/home-blog-card/h
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MailService } from './Services/Email/mail.service';
-import { BlogCardComponent } from './blog/blog-card/blog-card.component';
 
 
 @NgModule({
@@ -32,7 +30,6 @@ import { BlogCardComponent } from './blog/blog-card/blog-card.component';
     AppComponent,
     HomeComponent,
     ContactComponent,
-    BlogComponent,
     NotfoundComponent,
     AboutComponent,
     FaqComponent,
@@ -46,7 +43,6 @@ import { BlogCardComponent } from './blog/blog-card/blog-card.component';
     DiscoverSectionComponent,
     HomeBlogSectionComponent,
     HomeBlogCardComponent,
-    BlogCardComponent,
   ],
   imports: [
     BrowserModule,
