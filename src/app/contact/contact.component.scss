@@ -1,0 +1,65 @@
+@import ".././../styles.scss";
+.contact{
+    @extend .fs-sm;
+    .form-select{
+        background-color: #EBEBEB;
+        color:$textGray;
+        font-size: inherit;
+        border:none;
+        &:focus{
+            box-shadow: none;
+            border:none;
+        }
+    }
+    .touched{
+        background-color: transparent !important;
+         color:$linkColor !important;
+    }
+    .form-control{
+        font-size: inherit;
+        &::placeholder{
+            font-size: inherit;
+            color:$textGray;
+        }
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    .chooseFile{
+          background-color: #EBEBEB;
+          color:$textGray; 
+    }
+    #Message{
+        position: relative;
+        height: 100px;
+        &::placeholder{
+            position: absolute;
+            top:10px;
+        }
+    }
+    label{
+        @extend .fs-xs;
+    }
+    #checkParent{
+        label{
+        font-size: .8rem;
+        display: inline-block;
+        margin-top: 3px;
+    }
+      #check:focus{
+        box-shadow: none;
+        border-color: $linkColor;
+      }
+       #check:checked{
+        background-color: $btnColor;
+        border-color: $btnColor;
+      }
+    }
+  
+}
+
+@media screen and (min-width:992px){
+    .contactFormWidth{
+        width:80%;
+    }
+}
