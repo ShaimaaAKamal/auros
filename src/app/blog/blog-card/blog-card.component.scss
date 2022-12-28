@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+
+.blogCard{
+    transition: box-shadow 1s;
+ &:hover{
+    box-shadow:1px 1px 10px 1px rgba(90, 90, 90, 0.337);
+ }
+.title:hover{
+    color:$btnColor;
+}
+.info{
+    position: relative;
+    &::after{
+        content:'';
+        position: absolute;
+        width:1px;
+        height:25px;
+        background-color: $borderColor;
+        top:13px;
+        right:0;
+}
+
+}
+}

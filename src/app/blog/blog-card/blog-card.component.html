@@ -1,0 +1,45 @@
+<div class="blogCard card rounded-0">
+    <div class="blogCard overflow-hidden">
+          <img [src]= "blog.image" class="card-img-top blogImage rounded-0" alt="blog Image">
+    </div>
+  <div class="card-body pt-4 rounded-0 border-0">
+    <p class="card-text small mb-2 fw-normal title">
+        <a [routerLink]="'/blog/'+blog.id" class="text-decoration-none text-reset">
+        {{blog.title.split('').slice(0,30).join('')}}<span *ngIf="blog.title.length >30">...</span>
+    </a></p>
+    <div class="fs-sm text-dark fw-light d-flex align-items-center">
+        <div class="d-flex align-items-center me-3"><i class="fa-regular textDark fa-user me-1"></i>
+            <span class="title">
+              <a [routerLink]="'/blog/author/'+blog.authorId" class="text-decoration-none text-reset">
+                {{blog.author}}
+            </a>
+          </span>
+        </div>
+        <div class="d-flex align-items-center me-3"><i class="fa-regular textDark fa-folder me-1"></i>
+            <span class="title">
+                 <a [routerLink]="'/blog/category/'+blog.category.split(' ').join('_')" class="text-decoration-none text-reset">
+                        {{blog.category}}
+                 </a>
+            </span>
+        </div>
+        <div class="d-flex align-items-center me-3"><i class="fa-regular textDark fa-heart me-1"></i><span>{{blog.noOfLikes}}</span></div>
+    </div>
+    <p class="textGray fw-light fs-sm py-3 borderBottom">
+        {{blog.description.split('').slice(0,175).join('')}}<span *ngIf="blog.description.length >175">...</span>
+    </p>
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+        <span class="h2 info textSite pe-2 me-2 pt-2">{{blog.date.split(' ')[0]}}</span>
+        <div class="d-flex flex-column fs-xs fw-light textDark">
+            <span >{{blog.date.split(' ')[1]}}</span>
+            <span>{{blog.date.split(',')[1].split(' ')[1]}}</span>
+        </div>
+        </div>
+        <div class="d-flex align-items-center">
+            <i class="fa-solid fs-sm textGray  fa-comments"></i>
+            <span class="mx-1 text-muted fs-xs fw-light">{{blog.noOfComments}}</span>
+            <span class=" text-muted fs-xs fw-light text-uppercase">Comments</span>
+        </div>
+    </div>
+  </div>
+</div>
