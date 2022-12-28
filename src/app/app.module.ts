@@ -8,7 +8,7 @@ import { BlogComponent } from './blog/blog.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { FaqComponent } from './faq/faq.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeHeadingComponent } from './home/home-heading/home-heading.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { homeTrendingComponent } from './home/trending/trending.component';
@@ -22,6 +22,10 @@ import { DiscoverSectionComponent } from './home/discover-section/discover-secti
 import { HomeBlogSectionComponent } from './home/home-blog-section/home-blog-section.component';
 import { HomeBlogCardComponent } from './home/home-blog-section/home-blog-card/home-blog-card.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MailService } from './Services/Email/mail.service';
+import { BlogCardComponent } from './blog/blog-card/blog-card.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import { SharedModule } from './shared/shared.module';
     DiscoverSectionComponent,
     HomeBlogSectionComponent,
     HomeBlogCardComponent,
+    BlogCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,9 +54,9 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     BrowserAnimationsModule,
     CarouselModule,
-    SharedModule
+    SharedModule,ReactiveFormsModule,HttpClientModule
   ],
-  providers: [],
+  providers: [MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
