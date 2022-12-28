@@ -1,1 +1,23 @@
 <app-page-header [paths]="paths"></app-page-header>
+<section class="py-5 blogComponent">
+        <div class="parent">
+            <h2 class="fw-semibold">Latest Blog</h2>
+            <div class="blogs py-5 borderBottom">
+                <div class="container-fluid">
+                    <div class="row g-5">
+                        <div class="col-md-6 col-lg-4" *ngFor="let blog of displayedBlogs">
+                            <app-blog-card [blog]="blog"></app-blog-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-5 pb-4 d-flex align-items-center justify-content-between">
+                <span class="fs-sm text-muted fw-light">Showing {{displayedBlogStart}} - {{displayedBlogEnd}} of {{this.Blogs.length}} items</span>
+                <div class="d-flex align-items-center fs-sm textDark">
+                    <i class="fa-solid fa-chevron-left me-3" (click)="getPreviousPage()"></i>
+                    <span [ngClass]="['mx-2 page', index ===0 ? 'active':'']" *ngFor="let page of pages , let index=index;" (click)="getPage($event)">{{page}}</span>
+                    <i class="fa-solid fa-chevron-right ms-3" (click)="getNextPage()"></i>
+                </div>
+            </div>
+        </div>
+</section>
