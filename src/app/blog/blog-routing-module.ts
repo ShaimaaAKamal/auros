@@ -6,9 +6,12 @@ import { SingeBlogComponent } from './singe-blog/singe-blog.component';
 
 const routes: Routes = [
   {path:'',component:BlogComponent,title:'All Blog'},
-  {path:'author/:authorId',component:BlogComponent,title:'Author Blogs'},
+    {path:'author/:authorName',component:BlogComponent,title:'Author Blogs'},
+  // {path:'author/:authorId/:authorName',component:BlogComponent,title:'Author Blogs'},
   {path:'category/:categoryName',component:BlogComponent,title:'Category Blogs'},
-  {path:':id',component:SingeBlogComponent,title:'Single Blog'},
+  {path:'tag/:tagName',component:BlogComponent,title:'Tag Blogs'},
+  {path:'singleBlog/:id',component:SingeBlogComponent,title:'Single Blog'},
+  {path:'**',redirectTo:''},
 ];
 
 @NgModule({
