@@ -1,0 +1,66 @@
+<section class="leaveComment">
+     <h6 class="mb-4">Leave your comment</h6>
+     <form class="border p-5" [formGroup]="commentForm" (ngSubmit)="addComment()"> 
+         <div  class="alert alert-danger  py-2" *ngIf="captchaError">
+            <i class="fa-solid fa-triangle-exclamation me-2"></i>
+            <span>An error with captcha code, please try to recorrect!!!</span>
+         </div>
+            <div  class="alert alert-danger  py-2" *ngIf="serverError">
+            <i class="fa-solid fa-triangle-exclamation me-2"></i>
+            <span>Some thing went wrong, please try to recorrect!!!</span>
+         </div>
+         <div  class="alert alert-danger py-2" *ngIf="displayError">
+            <i class="fa-solid fa-triangle-exclamation me-2"></i>
+            <span>Must Enter missing fields, please try to recorrect!!!</span>
+         </div>
+         <div  class="alert alert-danger py-2" *ngIf="formError">
+            <i class="fa-solid fa-triangle-exclamation me-2"></i>
+            <span>An error with captcha code and missing form fields, please try to recorrect!!!</span>
+         </div>
+          <div  class="alert alert-success py-2" *ngIf="addedComment">
+            <i class="fa-solid fa-check me-2"></i>
+            <span>Your Comment has been added.</span>
+         </div>
+         <div (click)="removeMessages()">
+             <div class="row mb-3">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control rounded-0" id="name" formControlName="name" placeholder="Enter Your Name">
+                 <div *ngIf="commentForm.get('name')?.touched || displayError" class="fs-sm">
+                        <small *ngIf="commentForm.get('name')?.getError('required')" class="text-danger fs-sm fw-light mt-2">Can't be Empty</small>
+                </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control rounded-0" id="email" formControlName="email" placeholder="Enter Your Email">
+                <div *ngIf="commentForm.get('email')?.touched || displayError" class="fs-sm">
+                        <small *ngIf="commentForm.get('email')?.getError('required')" class="text-danger fs-sm fw-light mt-2">Can't be Empty</small>
+                        <small *ngIf="commentForm.get('email')?.getError('email')" class="text-danger fs-sm fw-light mt-2">Invalid Email Format</small>
+                </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+                <div class="col-sm-10">
+                     <div class="form-floating">
+                            <textarea class="form-control rounded-0" placeholder="Enter Your Comment" id="comment" formControlName="comment" style="height: 100px"></textarea>
+                            <div *ngIf="commentForm.get('comment')?.touched || displayError" class="fs-sm">
+                                <small *ngIf="commentForm.get('comment')?.getError('required')" class="text-danger fs-sm fw-light mt-2">Can't be Empty</small>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <label for="Captcha" class="col-sm-2 col-form-label">Captcha</label>
+                <div class="col-sm-10">
+                    <re-captcha (resolved)="resolved($event)" siteKey="6LdnXLcjAAAAAKL923evz_6vTfECDNwDIfi4FLmI"></re-captcha>
+                </div>
+            </div>
+             <div class="mb-3 pt-4 text-center">
+                <button type='submit' class="darkBtn py-2">Submit</button>
+            </div>
+         </div>
+     </form>
+</section>

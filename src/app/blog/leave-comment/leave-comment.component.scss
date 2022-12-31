@@ -1,0 +1,21 @@
+@import '../../../styles.scss';
+.leaveComment{
+    .alert{
+                @extend .fs-sm;
+                margin-bottom: 2rem;
+    }
+    .form-control{
+        @extend .fs-sm;
+        border-color: $borderColor;
+        &:focus{
+            box-shadow: none;
+        }
+        &::placeholder{
+            color:#999;
+        }
+    }
+    label{
+        @extend .fs-sm;
+        font-weight: 300;
+    }
+}
