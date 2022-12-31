@@ -1,0 +1,21 @@
+<section class="comment">
+    <div class="d-flex">
+         <div><img src="https://www.gravatar.com/avatar/b63405eb2bebafa6ad525eb2871d399d?d=&s=60" alt="avatarPhoto"></div>
+         <div class=" ms-3 border comment">
+             <div class="d-flex   justify-content-between align-items-center borderBottom">
+             <p class="my-0 px-3 py-2 fs-sm">
+                <span>Created on</span>
+                <span class="fw-light fs-xs mx-1">{{comment.date}}</span>
+                <span>Posted By</span>
+                <span class="fw-light  fs-xs mx-1 text-capitalize">{{comment.author}}</span>
+             </p>
+             <span class="commentIconbg align-self-stretch px-4 d-flex align-items-center">
+                 <i class="fa-solid text-dark fa-comment-dots"></i>
+             </span>
+             </div>
+             <div>
+                <p class="my-0 text-muted fs-sm p-3">{{comment.message}}</p>
+             </div>
+         </div>
+    </div>
+</section>
