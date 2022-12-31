@@ -1,0 +1,25 @@
+<div class="py-3 px-md-5 px-4   borderBottom">
+                <h6>Comments</h6>
+                <div *ngIf="blog.noOfComments > 0">
+                    <div *ngFor="let comment of displayedComments" class="my-3">
+                    <app-comment [comment]="comment"></app-comment>
+                    </div>
+                </div>
+                <div *ngIf="blog.noOfComments === 0">
+                        <div class="alert alert-success d-flex py-2 align-items-center">
+                            <i class="fa-solid fa-check me-2"></i>
+                            <span class="fs-sm fw-light">No comment at this time!</span>
+                        </div>
+                </div>
+            </div>
+            <div class="pt-4 pb-4 px-2 px-md-5 displayComments">
+            <div *ngIf="blog.noOfComments > 0"class=" d-flex flex-column flex-md-row align-items-center justify-content-md-between">
+                <span class="fs-sm text-muted fw-light" *ngIf="blog.noOfComments > 0">Showing {{displayedBlogStart}} - {{displayedBlogEnd}} of {{this.blog.comments.length}} items</span>
+                <div class="d-flex align-items-center  mt-4 mt-md-0 fs-sm textDark">
+                    <i class="fa-solid fa-chevron-left me-3" (click)="getPreviousPage()"></i>
+                    <span [ngClass]="['mx-2 page', index === currentActiveElement || (newPage && last) ? 'active':'']" *ngFor="let page of pages ;let last=last; let index=index;" (click)="getPage($event)">{{page}}</span>
+                    <i class="fa-solid fa-chevron-right ms-3" (click)="getNextPage()"></i>
+                </div>
+            </div>
+            <span class="fs-sm text-muted fw-light" *ngIf="blog.noOfComments=== 0">Showing 0 items</span>
+            </div>
