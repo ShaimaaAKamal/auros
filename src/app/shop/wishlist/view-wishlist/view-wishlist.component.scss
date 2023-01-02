@@ -1,0 +1,9 @@
+@import '../../../../styles.scss';
+.wishlistProducts{
+    .form-select{
+        @extend .fs-sm;
+        &:focus{
+            box-shadow: none;
+        }
+    }
+}

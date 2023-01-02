@@ -1,0 +1,23 @@
+<section class="wishlistProducts pt-4">
+  <div class="row g-4">
+    <div class="col-lg-4 col-xl-3 col-md-6" *ngFor="let product of products">
+      <div>
+            <div class="position-relative">
+                <img [src]="product.imagePath+ 'MediumSlide1.jpg'" [alt]="product.title" class="w-100">
+                <i class="fa-solid fa-trash position-absolute top-0 end-0 d-inline-block m-4" (click)="removeFromWishlist(product)" ></i>
+            </div>
+            <div class="py-4">
+                <h6 class="text-center productTitle" [routerLink]="'/shop/product/'+product.id">{{product.title}}</h6>
+                <div class="mb-2" *ngIf="loggedUser && loggedUser.wishlist.length >1 && displayList && product.id === clickedId">
+                    <label for="SelectWishlist"></label>
+                    <select class="form-select my-0 rounded-0" aria-label="SelectWishlist" id="SelectWishlist" name="movedToWishlist" (change)="handleSelectChange($event,product)" >
+                        <option  selected>Choose new wishlist</option>
+                        <option class="text-muted" [value]="wishlist.id"  *ngFor="let wishlist of loggedUser.wishlist">{{wishlist.name}}</option>
+                </select>
+                </div>
+                <button class="darkBtn fs-sm mt-2 py-2 w-100 fw-light" (click)="moveToAnotherWishlist(product)">Move</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
