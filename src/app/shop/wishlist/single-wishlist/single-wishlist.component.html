@@ -1,0 +1,32 @@
+<app-page-header [paths]="paths"></app-page-header>
+<div class="parent">
+    <section class="singleWishlist py-5" >
+        <div *ngIf="wishlist">
+            <h6>Wishlist "{{wishlist.name}}"</h6>
+            <p class="text-muted fw-light fs-sm">
+                <span>Other wishlists of {{loggedUser.name}} :</span> 
+                <span *ngFor="let wish of otherWishlist ;let last=last">
+                     <a class="mx-2 text-decoration-none productTitle" [routerLink]="'/shop/wishlist/' + wish.id">{{wish.name}}</a>
+                     <span *ngIf="!last">/</span>
+                </span>
+            </p>
+            <div class="alert alert-secondary py-2 fs-sm" *ngIf="wishlist.products.length === 0">
+                <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <span>No products exists in "{{wishlist.name}}"!</span>
+            </div>
+            <div  *ngIf="wishlist.products.length > 0">
+               <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let product of wishlist.products">
+                            <app-singlewishlishproduct [product]="product"></app-singlewishlishproduct>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div *ngIf="!wishlist">
+            <div class="alert alert-secondary py-2 fs-sm">
+                <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <span>There is no such wishlist!</span>
+            </div>
+        </div>
+    </section>
+</div>
