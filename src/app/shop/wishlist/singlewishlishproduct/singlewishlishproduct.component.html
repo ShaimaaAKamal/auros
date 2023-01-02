@@ -1,0 +1,43 @@
+<div class="wishlistProductCard px-5 px-md-0">
+    <div class="position-relative">
+        <img [src]="product.imagePath+'MediumSlide1.jpg'" [alt]="product.title" class="w-100">
+        <span class="position-absolute m-3 top-0 start-0 fs-xs textSite" *ngIf="product.isNew">
+            New
+        </span>
+    </div>
+    <div class="sizeParent mb-2 d-flex align-items-center pt-2" *ngIf="product.sizes">
+        <div class="d-flex align-items-center">
+            <div class="form-check position-relative" *ngFor="let Size of product.sizes ;let even=even">
+                    <input class="form-check-input shadow-sm" type="radio" name="size"  [value]="Size" [id]="Size + 'Size'">
+                    <label class="form-check-label" [ngClass]="even ? 'ps-1' : '' " [for]="Size + 'Size'">
+                        {{Size}}
+                    </label>
+            </div>
+        </div>
+    </div>
+    <div class="colorParent mb-4 d-flex align-items-center" *ngIf="product.colors">
+        <div class="ps-2 d-flex align-items-center">
+            <div class="form-check  position-relative" *ngFor="let color of product.colors ;">
+                    <input class="form-check-input" type="radio" name="color"  [value]="color" [ngStyle]="{backgroundColor:color}">
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <div class="mb-3">
+            <input type="text" class="form-control rounded-0 text-center fw-light textDark" name="quantity" value='1' #quantity >
+        </div>
+        <div class="mb-3">
+            <button class="w-100  darkBtn btnBg fw-light fs-sm py-2 rounded-0" (click)="addtoCart()">Add to cart</button>
+        </div>
+        <h6 class="text-center">
+              <a [routerLink]="'/shop/product/' + product.id" class="text-decoration-none productTitle">
+                              {{product.title}}
+             </a>
+        </h6>
+         <p class="d-flex align-items-center justify-content-center mt-3">
+                            <span  [ngClass]=" [product.discount?'textGray text-decoration-line-through fs-sm ':'text-dark ' ,'me-1 fw-light']">{{product.old}}</span>
+                            <span *ngIf="product.discount" class=" px-2 mx-1 text-white fw-light fs-xs bgSite">-{{product.discount}}%</span>
+                            <span *ngIf="product.discount" class=" text-dark ">${{parseFloat((product.old).split('$')[1]) - (parseFloat((product.old).split('$')[1])*product.discount/100)}}</span>
+        </p>
+    </div>
+</div>
