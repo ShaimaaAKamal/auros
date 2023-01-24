@@ -11,12 +11,23 @@ html{
 }
 body{
     padding: 0;
-    margin: 0;
+    margin: 0 ;
    font-family: inherit;
+   overflow-x: hidden;
+}
+.cartBorder{
+    border:1px solid $borderColor;
+    border-top-width: 4px;
 }
 .ls{
     letter-spacing: 2px;
 }
+.bgLightGray{
+    background-color: #F6F5F7;
+}
+  .px-6{
+        padding: 0 1.5rem;
+  }
 .parent{
     width:97%;
     margin: 0 auto;
@@ -104,9 +115,46 @@ body{
         color:$btnColor;
     }
 }
-
+ .floatMessage{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #22222278;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:100000000;
+ }
+.messageWidth{
+    @extend .fs-sm;
+   width:90%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #fff;
+   color:$textGray;
+   margin:0 auto;
+   padding:1rem 1.5rem;
+}
+.form-control{
+    &:focus{
+        box-shadow:none;
+    }
+}
 @media screen and (min-width:992px){
     .parent{
     margin: 0 auto;
+}
+.messageWidth{
+   width:75% 
+}
+}
+
+@media screen and (min-width:1200px){
+
+.messageWidth{
+   width:50% 
 }
 }
