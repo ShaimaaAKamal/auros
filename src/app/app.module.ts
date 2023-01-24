@@ -23,7 +23,8 @@ import { HomeBlogCardComponent } from './home/home-blog-section/home-blog-card/h
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MailService } from './Services/Email/mail.service';
-
+import { GoogleLoginProvider, SocialLoginModule , SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
+import { FacebookLoginProvider } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -50,9 +51,34 @@ import { MailService } from './Services/Email/mail.service';
     FormsModule,
     BrowserAnimationsModule,
     CarouselModule,
-    SharedModule,ReactiveFormsModule,HttpClientModule
+    SharedModule,ReactiveFormsModule,HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [MailService],
+    providers: [MailService,
+      
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '833486081205-skkvhahhdmmrhc2mm9h809sd10eul7hn.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('2882402905230036')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+  ],
+  // providers: [MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
