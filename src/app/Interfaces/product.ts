@@ -1,4 +1,5 @@
 import { Manufacturers } from './manufacturers';
+import { Wishlist } from './wishlist';
 export interface Product {
   id:number,
   title:string,
@@ -25,7 +26,10 @@ export interface Product {
   ManufacturerId?:number,
   noOfReviews:number,
   rate:number,
+  isPopular?:Boolean,
   old:string,
   descList?:string[];
-  additionalDesc?:string
+  additionalDesc?:string,
+  addedToWishList:boolean;
+  WishlistId?:number
 }
